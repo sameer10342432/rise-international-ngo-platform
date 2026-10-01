@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-high":"#e1e8ff","primary-fixed":"#d8e2ff","on-primary-fixed":"#031a3e","surface-tint":"#4b5e85","surface-dim":"#d1daf4","tertiary-container":"#002149","secondary-fixed-dim":"#51e089","on-secondary-fixed":"#00210d","on-primary-fixed-variant":"#34466c","on-secondary":"#ffffff","tertiary":"#000b20","primary-fixed-dim":"#b3c6f3","on-error":"#ffffff","on-primary-container":"#7689b3","error":"#ba1a1a","on-primary":"#ffffff","secondary-fixed":"#71fda2","on-surface-variant":"#44474e","surface-container-highest":"#d9e2fc","inverse-primary":"#b3c6f3","on-surface":"#121b2e","on-tertiary-fixed-variant":"#00468d","outline":"#75777f","surface-variant":"#d9e2fc","surface":"#f9f9ff","background":"#f9f9ff","secondary-container":"#71fda2","tertiary-fixed":"#d6e3ff","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","outline-variant":"#c5c6cf","primary":"#000b23","inverse-on-surface":"#edf0ff","surface-container":"#e9edff","inverse-surface":"#273044","on-tertiary-container":"#3188f8","on-secondary-fixed-variant":"#005229","surface-container-low":"#f1f3ff","surface-bright":"#f9f9ff","secondary":"#006d39","primary-container":"#0b2145","error-container":"#ffdad6","on-tertiary-fixed":"#001b3e","on-background":"#121b2e","on-error-container":"#93000a","tertiary-fixed-dim":"#aac7ff","on-secondary-container":"#00743d"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin":"1.5rem","gutter-lg":"2rem","gutter":"1.5rem","space-2xl":"3rem","space-md":"1rem","margin-md":"3rem","space-sm":"0.75rem","space-lg":"1.5rem","space-4xl":"6rem","margin-lg":"5rem","gutter-sm":"1rem","space-3xl":"4.5rem","space-2xs":"0.25rem","space-xl":"2rem","space-xs":"0.5rem"},fontFamily:{"label-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"body-xl":["Inter"],"display-hero-mobile":["Plus Jakarta Sans"],"body-lg":["Inter"],"label-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"body-sm":["Inter"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"stat-metric":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"]},fontSize:{"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.015em","fontWeight":"600"}],"display-hero":["68px",{"lineHeight":"76px","letterSpacing":"-0.03em","fontWeight":"800"}],"body-xl":["20px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"400"}],"display-hero-mobile":["42px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"800"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"400"}],"label-lg":["16px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"26px","letterSpacing":"0em","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"22px","letterSpacing":"0em","fontWeight":"400"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"stat-metric":["44px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"800"}],"headline-xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1440px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-4"><div class="flex items-center gap-4 flex-shrink-0"><a class="flex items-center gap-3" data-path="home" href="#"><img alt="RISE International Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLYbvW6osJUSeZKEM0bPrJuIKFB3sufWLdS5L15WM2i2xJTD00Bk5PoEVrKmThwj-YoIJnBmDanu_7IiIuhN7SQWHG73Wf6PuvCaaZAb_Q_ITxE778nZKnF-SVi5XdoXMpDV5NnU3c3vTt3-cTHuUFwS-g8PQXkgeBS354nmEPQlqshkNd24VdV6-iVQbjW_47FVXdI-_0GtCjUeIx4jHpaNhOqglIJUTSwPj5SRlvP1QWrdWVbBC5YcGD"/><div class="hidden xl:flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none tracking-tight">RISE</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-[10px] leading-tight">International</span></div></a></div><nav class="hidden lg:flex items-center gap-1 xl:gap-2" data-active-classes="bg-surface-container text-on-surface font-bold rounded-lg"><a aria-current="page" class="px-3 py-2 transition-colors bg-surface-container text-on-surface font-bold rounded-lg" data-path="home" href="#">Home</a><div class="relative group"><button class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg inline-flex items-center gap-1" type="button"><span>About Us</span><span class="material-symbols-outlined text-[18px]">expand_more</span></button><div class="absolute left-0 top-full pt-2 hidden group-hover:block w-56"><div class="bg-surface-container-lowest rounded-xl shadow-[0_8px_24px_-4px_rgba(11,33,69,0.08),0_24px_48px_-12px_rgba(11,33,69,0.16)] p-2 flex flex-col gap-1"><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="about-us" href="#">Our Story</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="about-us" href="#">Mission &amp; Vision</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="about-us" href="#">Our Values</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="about-us" href="#">Our Team</a></div></div></div><div class="relative group"><button class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg inline-flex items-center gap-1" type="button"><span>Our Work</span><span class="material-symbols-outlined text-[18px]">expand_more</span></button><div class="absolute left-0 top-full pt-2 hidden group-hover:block w-60"><div class="bg-surface-container-lowest rounded-xl shadow-[0_8px_24px_-4px_rgba(11,33,69,0.08),0_24px_48px_-12px_rgba(11,33,69,0.16)] p-2 flex flex-col gap-1"><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="our-work" href="#">Education</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="our-work" href="#">Community Development</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="our-work" href="#">Humanitarian Aid</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="our-work" href="#">Economic Empowerment</a></div></div></div><div class="relative group"><button class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg inline-flex items-center gap-1" type="button"><span>Impact</span><span class="material-symbols-outlined text-[18px]">expand_more</span></button><div class="absolute left-0 top-full pt-2 hidden group-hover:block w-56"><div class="bg-surface-container-lowest rounded-xl shadow-[0_8px_24px_-4px_rgba(11,33,69,0.08),0_24px_48px_-12px_rgba(11,33,69,0.16)] p-2 flex flex-col gap-1"><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="impact" href="#">Impact Overview</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="impact" href="#">Statistics</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="impact" href="#">Stories of Change</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="impact" href="#">Annual Report</a></div></div></div><div class="relative group"><button class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg inline-flex items-center gap-1" type="button"><span>Get Involved</span><span class="material-symbols-outlined text-[18px]">expand_more</span></button><div class="absolute left-0 top-full pt-2 hidden group-hover:block w-56"><div class="bg-surface-container-lowest rounded-xl shadow-[0_8px_24px_-4px_rgba(11,33,69,0.08),0_24px_48px_-12px_rgba(11,33,69,0.16)] p-2 flex flex-col gap-1"><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="donate" href="#">Donate</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="get-involved" href="#">Sponsor a Child</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="get-involved" href="#">Volunteer</a><a class="px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors" data-path="get-involved" href="#">Partner With Us</a></div></div></div><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" data-path="news-and-stories" href="#">News &amp; Stories</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" data-path="contact-us" href="#">Contact Us</a></nav><div class="flex items-center gap-3 flex-shrink-0"><button class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors" type="button"><span class="text-sm leading-none">🇬🇧</span><span>English</span></button><a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-[10px] bg-secondary text-on-secondary font-label-lg text-label-lg shadow-sm hover:bg-secondary/90 transition-all hover:-translate-y-0.5" data-path="donate" href="#"><span class="material-symbols-outlined text-[18px]">favorite</span><span>DONATE NOW</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- 1. HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-primary-container text-on-primary">
+<!-- Hero Background Layer -->
+<div class="absolute inset-0 z-0">
+<img alt="Children smiling in a vibrant classroom with a volunteer teacher" class="w-full h-full object-cover object-center opacity-35 transform scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkk4G1Vb3J8x_InEdqBf6VKlyKv_w5oorOllMSvwMAfRmFSkZFUxrDnJehSSAGekkxleIe0N_Izx1G2XovLcww4eerBg_3l0SeATBIghduQD8rEeEXeUubIkypVb3fIIt7kEn-cMczKyRcxfXDY7BchjQHukiVU5-RYe3dwls4aOKO-DQ5sKtDEAwoAnSiWF6KCzKJQ8tVkvUQ5TAw4BtuUjywVZmaLbNw8NwLqP0tM48h4p9Tn7PNbA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/85 to-primary-container/40"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent"></div>
+</div>
+<!-- Hero Content Container -->
+<div class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 pb-28 lg:pt-24 lg:pb-36">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Left Column: Vision & Primary Calls -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-surface-container-lowest/10 backdrop-blur-md self-start text-secondary-fixed">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">RISE International • Global Humanitarian Initiative</span>
+</div>
+<h1 class="font-display-hero text-headline-xl lg:text-display-hero font-extrabold tracking-tight text-white leading-tight">
+            Empowering Communities. <br/>
+<span class="text-secondary-fixed">Transforming Lives.</span>
+</h1>
+<p class="font-body-xl text-body-lg lg:text-body-xl text-surface-container-high/90 max-w-2xl leading-relaxed">
+            RISE International is a global nonprofit organisation working to uplift vulnerable communities through education, humanitarian aid, and sustainable development initiatives.
+          </p>
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-label-lg text-label-lg shadow-lg hover:bg-secondary/90 transition-all hover:-translate-y-0.5" data-path="donate" href="#">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span>DONATE NOW</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-surface-container-lowest/10 backdrop-blur-md text-white font-label-lg text-label-lg hover:bg-surface-container-lowest/20 transition-all" data-path="get-involved" href="#">
+<span class="material-symbols-outlined text-[20px]">group_add</span>
+<span>BECOME A VOLUNTEER</span>
+</a>
+</div>
+<div class="flex items-center gap-3 pt-3 text-surface-container-high/80 font-body-sm text-body-sm">
+<div class="flex text-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span>Trusted by 300+ international partners &amp; active in 25+ countries</span>
+</div>
+</div>
+<!-- Right Column: Interactive Quick Impact Deck -->
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="bg-surface-container-lowest/95 backdrop-blur-xl rounded-2xl p-7 lg:p-8 text-on-surface shadow-2xl flex flex-col gap-6">
+<div class="flex items-start justify-between gap-4">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Direct Action Hub</span>
+<h3 class="font-headline-md text-headline-md text-primary mt-1">Together, we can create lasting change for a better tomorrow.</h3>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high/60 flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[22px]">volunteer_activism</span>
+</div>
+</div>
+<!-- Action Quick-Links -->
+<div class="flex flex-col gap-3">
+<!-- Item 1 -->
+<a class="group flex items-center justify-between p-4 rounded-xl bg-surface hover:bg-surface-container-low transition-all" data-path="get-involved" href="#">
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Sponsor a Child</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Change a life through quality education</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</a>
+<!-- Item 2 -->
+<a class="group flex items-center justify-between p-4 rounded-xl bg-surface hover:bg-surface-container-low transition-all" data-path="our-work" href="#">
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">solar_power</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Support a Project</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fund clean water &amp; solar initiatives</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</a>
+<!-- Item 3 -->
+<a class="group flex items-center justify-between p-4 rounded-xl bg-surface hover:bg-surface-container-low transition-all" data-path="donate" href="#">
+<div class="flex items-center gap-3.5">
+<div class="w-11 h-11 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-primary">Make a Donation</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Deliver immediate life-saving relief</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary group-hover:translate-x-1 transition-all text-[20px]">arrow_forward</span>
+</a>
+</div>
+<!-- Indicator Dots -->
+<div class="flex items-center justify-between pt-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">Empowerment Priority: East Africa &amp; Sahel</span>
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-container-high"></span>
+<span class="w-2 h-2 rounded-full bg-surface-container-high"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. IMPACT STATISTICS FLOATING BAR -->
+<section class="relative z-20 max-w-[1440px] mx-auto px-6 lg:px-12 -mt-14 w-full">
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl p-6 lg:p-8">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x-0">
+<!-- Stat 1 -->
+<div class="flex flex-col items-center text-center px-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-3">
+<span class="material-symbols-outlined text-[26px]">public</span>
+</div>
+<span class="font-stat-metric text-stat-metric text-primary leading-tight">25+</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">Countries Reached</span>
+</div>
+<!-- Stat 2 -->
+<div class="flex flex-col items-center text-center px-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-3">
+<span class="material-symbols-outlined text-[26px]">task_alt</span>
+</div>
+<span class="font-stat-metric text-stat-metric text-primary leading-tight">500+</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">Projects Completed</span>
+</div>
+<!-- Stat 3 -->
+<div class="flex flex-col items-center text-center px-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-3">
+<span class="material-symbols-outlined text-[26px]">groups</span>
+</div>
+<span class="font-stat-metric text-stat-metric text-primary leading-tight">250K+</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">Lives Impacted</span>
+</div>
+<!-- Stat 4 -->
+<div class="flex flex-col items-center text-center px-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-3">
+<span class="material-symbols-outlined text-[26px]">handshake</span>
+</div>
+<span class="font-stat-metric text-stat-metric text-primary leading-tight">1,500+</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">Active Volunteers</span>
+</div>
+<!-- Stat 5 -->
+<div class="flex flex-col items-center text-center px-3 col-span-2 md:col-span-1">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-3">
+<span class="material-symbols-outlined text-[26px]">corporate_fare</span>
+</div>
+<span class="font-stat-metric text-stat-metric text-primary leading-tight">300+</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1">Partners Worldwide</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. OUR PROGRAMMES SECTION -->
+<section class="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+<div class="max-w-2xl">
+<div class="flex items-center gap-2 text-secondary mb-2">
+<span class="w-3 h-0.5 bg-secondary rounded-full"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">OUR PROGRAMS</span>
+</div>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl text-primary font-bold">
+          Creating Impact Where It Matters Most
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
+          We focus on sustainable solutions that empower individuals and strengthen communities for long-term transformation.
+        </p>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-lg text-label-lg hover:text-secondary transition-colors self-start md:self-auto" data-path="our-work" href="#">
+<span>Explore All Initiatives</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+<!-- 4 Programme Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1: Education -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-56 overflow-hidden">
+<img alt="Children in classroom interacting eagerly with their teacher" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkk4G1Vb3J8x_InEdqBf6VKlyKv_w5oorOllMSvwMAfRmFSkZFUxrDnJehSSAGekkxleIe0N_Izx1G2XovLcww4eerBg_3l0SeATBIghduQD8rEeEXeUubIkypVb3fIIt7kEn-cMczKyRcxfXDY7BchjQHukiVU5-RYe3dwls4aOKO-DQ5sKtDEAwoAnSiWF6KCzKJQ8tVkvUQ5TAw4BtuUjywVZmaLbNw8NwLqP0tM48h4p9Tn7PNbA"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm">
+            Education
+          </span>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Education</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+              Providing quality education, safe learning environments, and essential school supplies for a brighter future.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md group-hover:gap-3 transition-all pt-2" data-path="our-work" href="#">
+<span>Learn More</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Community Development -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-56 overflow-hidden">
+<img alt="Smiling woman agricultural leader holding a basket of fresh organic produce near solar irrigation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0cjVljQ7kMwYcSgHzBvW4wCgL1lvV6uL0sh_V8FCWn6VoYr5RxEtmzsrcgqOz4Jo1-Yufn7QktsfxPBSC6G2-7Ku3oitpC9F26dndfKHr8CPBsQ7VISq7BIretPyiJ3OIFKxA3luKCF4yud_zWfm8b_4u67Qoy1OpuVRwYKai-u8E-4BpYDmgHwCPTZpuSfC4sedQwZ304VdRxG43MGIIVITK74qn1F4EzbYuZBAw8LUUhQtQ0dkfWA"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm">
+            Sustainability
+          </span>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Community Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+              Building resilient communities through sustainable solar infrastructure, water wells, and agricultural resources.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md group-hover:gap-3 transition-all pt-2" data-path="our-work" href="#">
+<span>Learn More</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3: Humanitarian Aid -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-56 overflow-hidden">
+<img alt="Female humanitarian medic using stethoscope to examine a healthy infant in field clinic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYOBd6vyEl7KuRYlPVDA_MYN580pC6dcGEt39aoW4Qy3ywrqvNqdnZMWfyjHvbTkwLUkSSEmAldecPMNPloGi6K9keYOVpKyeJ97tpMHBcHtdln7WbvBsDvExEArIzpOIuIk2jfGxXZDyXBy8I9rq3iQAQ_xvt4zcPAnRc5iD7WvUNk_bRiYHHiZ7ibt6dg07y97DvRb-PqVYZz9bDORbp4qeQcqMmUSIIkELj-G2g2PzZOobw7iAMAw"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm">
+            Emergency Care
+          </span>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Humanitarian Aid</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+              Delivering rapid emergency relief, medical aid stations, and critical nutrition kits to families affected by crises.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md group-hover:gap-3 transition-all pt-2" data-path="our-work" href="#">
+<span>Learn More</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4: Economic Empowerment -->
+<div class="group flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A cooperative of enterprising African artisans and small business owners gathered in an open-air workshop discussing textile production and finance ledger, soft natural golden morning light, vibrant authentic fabrics, deep navy and emerald color harmony, dignified and uplifting documentary photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtV5CG7bBXpWMKqae0TS_wOaXy7A5owbgTY0UOg6-aid04-WaFVll2qX7snrzOtlxhCm5O1gHY3n8phynr1NADf4AyFz8MglYgO1b0PtN_eTEvDwtQNxT2Ccb9JGCw1JSMzuvMEctwD6GOyIB5EO2nle1dHwDx-EkoRYxJKvmhEhrzYMFySZAPWnMbE2WnPvGUaphJK_d7Nla5X2yJ9_VMyIRxH4XA_3Nx-G1gjFLNJitVNNwqkG1iyQ"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm">
+            Microfinance
+          </span>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Economic Empowerment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+              Creating pathways to long-term financial self-reliance through vocational mentorship, micro-grants, and cooperative markets.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md group-hover:gap-3 transition-all pt-2" data-path="our-work" href="#">
+<span>Learn More</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. IMPACT PANEL (DARK NAVY / NUMBERS THAT REFLECT CHANGE) -->
+<section class="w-full bg-primary-container text-on-primary py-20 relative overflow-hidden">
+<!-- Subtle geometric background vector -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg class="w-full h-full" fill="none" viewbox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="300" r="280" stroke="currentColor" stroke-dasharray="8 8" stroke-width="1.5"></circle>
+<circle cx="1200" cy="150" r="350" stroke="currentColor" stroke-width="2"></circle>
+<path d="M-100 400C300 250 800 550 1500 350" stroke="currentColor" stroke-width="1"></path>
+</svg>
+</div>
+<div class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
+<div class="max-w-xl">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider">Accountability &amp; Results</span>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl text-white font-bold mt-2">
+            Numbers That Reflect Change
+          </h2>
+<p class="font-body-lg text-body-lg text-surface-container-high/80 mt-4 leading-relaxed">
+            Every donation, volunteer hour, and partnership converts directly into measurable field outcomes. We maintain uncompromising fiscal transparency with 88% of funds deployed directly on the ground.
+          </p>
+<div class="pt-6">
+<a class="inline-flex items-center gap-3 px-7 py-3.5 rounded-xl bg-secondary text-white font-label-lg text-label-lg hover:bg-secondary/90 transition-all shadow-md" data-path="impact" href="#">
+<span>SEE OUR IMPACT REPORT</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- 4 Impact metric pill cards -->
+<div class="w-full lg:max-w-xl grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-6 rounded-2xl bg-surface-container-lowest/5 backdrop-blur-md">
+<span class="font-stat-metric text-stat-metric text-secondary-fixed font-bold leading-none">25+</span>
+<h4 class="font-headline-sm text-headline-sm text-white mt-2">Countries Reached</h4>
+<p class="font-body-sm text-body-sm text-surface-container-high/70 mt-1">Expanding footprint across Sub-Saharan Africa and Central Asia.</p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest/5 backdrop-blur-md">
+<span class="font-stat-metric text-stat-metric text-secondary-fixed font-bold leading-none">250,000+</span>
+<h4 class="font-headline-sm text-headline-sm text-white mt-2">People Impacted</h4>
+<p class="font-body-sm text-body-sm text-surface-container-high/70 mt-1">Direct beneficiaries of primary schooling, nutrition &amp; solar wells.</p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest/5 backdrop-blur-md">
+<span class="font-stat-metric text-stat-metric text-secondary-fixed font-bold leading-none">500+</span>
+<h4 class="font-headline-sm text-headline-sm text-white mt-2">Community Projects</h4>
+<p class="font-body-sm text-body-sm text-surface-container-high/70 mt-1">Locally stewarded classrooms, water clinics, and agro-farms.</p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest/5 backdrop-blur-md">
+<span class="font-stat-metric text-stat-metric text-secondary-fixed font-bold leading-none">1,500+</span>
+<h4 class="font-headline-sm text-headline-sm text-white mt-2">Active Volunteers</h4>
+<p class="font-body-sm text-body-sm text-surface-container-high/70 mt-1">Certified physicians, engineers, teachers, and regional organizers.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. ABOUT RISE INTERNATIONAL -->
+<section class="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left: Visual Story Block -->
+<div class="lg:col-span-6 relative">
+<div class="relative rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Local agricultural pioneer showcasing healthy seasonal crop yield" class="w-full h-[520px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0cjVljQ7kMwYcSgHzBvW4wCgL1lvV6uL0sh_V8FCWn6VoYr5RxEtmzsrcgqOz4Jo1-Yufn7QktsfxPBSC6G2-7Ku3oitpC9F26dndfKHr8CPBsQ7VISq7BIretPyiJ3OIFKxA3luKCF4yud_zWfm8b_4u67Qoy1OpuVRwYKai-u8E-4BpYDmgHwCPTZpuSfC4sedQwZ304VdRxG43MGIIVITK74qn1F4EzbYuZBAw8LUUhQtQ0dkfWA"/>
+</div>
+<!-- Overlapping floating story badge -->
+<div class="absolute -bottom-8 -right-4 sm:right-6 bg-surface-container-lowest p-6 rounded-2xl shadow-xl max-w-xs">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-secondary/15 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-primary block">Locally Governed</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">Community-driven action</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Projects are co-designed and maintained entirely by community elders and youth leaders.
+          </p>
+</div>
+</div>
+<!-- Right: Narrative & Principles -->
+<div class="lg:col-span-6 flex flex-col gap-6">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">ABOUT RISE INTERNATIONAL</span>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl text-primary font-bold mt-2">
+            Building Stronger Communities. Creating Lasting Opportunities.
+          </h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          RISE International is an international non-profit committed to ending generational poverty by shifting from temporary relief to perpetual self-reliance. We empower rural and urban fringe populations by building modern, localized capacities.
+        </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Rather than imposing top-down solutions, we partner shoulder-to-shoulder with local teachers, doctors, farmers, and grassroots organizers. This guarantees that every school built, clean borehole drilled, and vocational cooperative funded continues to flourish decades into the future.
+        </p>
+<!-- 3 Value Pillars -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">person_heart</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-primary">People First</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs">Every initiative honors individual dignity and local culture.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">eco</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-primary">Sustainable</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs">Ecological solar tech and locally sourced building materials.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-primary">Transparent</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs">Open financial ledgers and real-time project metrics.</p>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary/90 transition-all" data-path="about-us" href="#">
+<span>LEARN MORE ABOUT US</span>
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. OUR APPROACH (PROCESS ROADMAP) -->
+<section class="w-full bg-surface-container-low py-24">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">OUR METHODOLOGY</span>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl text-primary font-bold mt-2">
+          How We Create Lasting Change
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
+          A four-stage framework designed to transition communities from vulnerability to complete independence.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+<!-- Step 1 -->
+<div class="flex flex-col bg-surface-container-lowest p-8 rounded-2xl shadow-sm relative">
+<span class="font-stat-metric text-stat-metric text-surface-container-highest font-extrabold mb-4">01</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Listen &amp; Understand</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            We spend months on the ground with village councils, mothers, and educators listening to root challenges before drafting blueprints.
+          </p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col bg-surface-container-lowest p-8 rounded-2xl shadow-sm relative">
+<span class="font-stat-metric text-stat-metric text-secondary font-extrabold mb-4">02</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Build Sustainable Solutions</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Co-designing eco-resilient water wells, clinic cold chains, and durable solar classrooms utilizing local materials and green engineering.
+          </p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col bg-surface-container-lowest p-8 rounded-2xl shadow-sm relative">
+<span class="font-stat-metric text-stat-metric text-surface-container-highest font-extrabold mb-4">03</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Work With Communities</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Training indigenous water technicians, micro-finance treasurers, and teachers so local leadership possesses full operational autonomy.
+          </p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col bg-surface-container-lowest p-8 rounded-2xl shadow-sm relative">
+<span class="font-stat-metric text-stat-metric text-surface-container-highest font-extrabold mb-4">04</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Measure &amp; Improve</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Deploying sensor telemetrics, annual literacy exams, and independent audits to continuously refine our global interventions.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. FEATURED IMPACT STORIES -->
+<section class="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">FIELD DISPATCHES</span>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl text-primary font-bold mt-2">
+          Stories of Change
+        </h2>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-lg text-label-lg hover:text-secondary transition-colors self-start md:self-auto" data-path="news-and-stories" href="#">
+<span>View All Stories</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+<!-- 3 Stories Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Story 1 -->
+<article class="flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="h-60 overflow-hidden relative">
+<img alt="Young schoolgirl learning to write with her teacher in rural East Africa" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkk4G1Vb3J8x_InEdqBf6VKlyKv_w5oorOllMSvwMAfRmFSkZFUxrDnJehSSAGekkxleIe0N_Izx1G2XovLcww4eerBg_3l0SeATBIghduQD8rEeEXeUubIkypVb3fIIt7kEn-cMczKyRcxfXDY7BchjQHukiVU5-RYe3dwls4aOKO-DQ5sKtDEAwoAnSiWF6KCzKJQ8tVkvUQ5TAw4BtuUjywVZmaLbNw8NwLqP0tM48h4p9Tn7PNbA"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm">
+            Education
+          </span>
+</div>
+<div class="p-7 flex flex-col flex-1 justify-between gap-4">
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">May 12, 2024 • Samburu, Kenya</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-2 mb-3">
+              From a Mud Shack to Top of the Class: Amina’s Journey
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+              At age seven, Amina studied under a cracked tin roof. After RISE funded the St. Jude solar academy, she achieved the highest regional reading scores.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-3 transition-all pt-2" data-path="news-and-stories" href="#">
+<span>Read Story</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Story 2 -->
+<article class="flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="h-60 overflow-hidden relative">
+<img alt="Farmer holding bountiful greens harvest beside solar irrigation pump in Turkana" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0cjVljQ7kMwYcSgHzBvW4wCgL1lvV6uL0sh_V8FCWn6VoYr5RxEtmzsrcgqOz4Jo1-Yufn7QktsfxPBSC6G2-7Ku3oitpC9F26dndfKHr8CPBsQ7VISq7BIretPyiJ3OIFKxA3luKCF4yud_zWfm8b_4u67Qoy1OpuVRwYKai-u8E-4BpYDmgHwCPTZpuSfC4sedQwZ304VdRxG43MGIIVITK74qn1F4EzbYuZBAw8LUUhQtQ0dkfWA"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm">
+            Community Farming
+          </span>
+</div>
+<div class="p-7 flex flex-col flex-1 justify-between gap-4">
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">April 28, 2024 • Turkana Basin</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-2 mb-3">
+              Solar Irrigation Brings Year-Round Harvests to Turkana
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+              How thirty smallholder women farmers turned drought-stricken scrubland into a vibrant agro-ecological cooperative feeding 1,200 households.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-3 transition-all pt-2" data-path="news-and-stories" href="#">
+<span>Read Story</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Story 3 -->
+<article class="flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="h-60 overflow-hidden relative">
+<img alt="Pediatric humanitarian doctor caring for mother and smiling infant" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYOBd6vyEl7KuRYlPVDA_MYN580pC6dcGEt39aoW4Qy3ywrqvNqdnZMWfyjHvbTkwLUkSSEmAldecPMNPloGi6K9keYOVpKyeJ97tpMHBcHtdln7WbvBsDvExEArIzpOIuIk2jfGxXZDyXBy8I9rq3iQAQ_xvt4zcPAnRc5iD7WvUNk_bRiYHHiZ7ibt6dg07y97DvRb-PqVYZz9bDORbp4qeQcqMmUSIIkELj-G2g2PzZOobw7iAMAw"/>
+<span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm">
+            Humanitarian Aid
+          </span>
+</div>
+<div class="p-7 flex flex-col flex-1 justify-between gap-4">
+<div>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">March 14, 2024 • Southern Province</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mt-2 mb-3">
+              Mobile Health Clinics Reaching Families in Crisis
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+              Equipped with solar cold-storage for vaccines, our roving medical teams provided critical diagnostic care to 4,800 mothers and newborns.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-3 transition-all pt-2" data-path="news-and-stories" href="#">
+<span>Read Story</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- 8. INTERACTIVE DONATION CALCULATOR & CTA SECTION -->
+<section class="w-full bg-primary-container text-on-primary py-24 relative overflow-hidden" id="donate-calculator">
+<div class="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider">MAKE AN IMMEDIATE DIFFERENCE</span>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl text-white font-bold mt-2">
+          Your Support Can Change a Life.
+        </h2>
+<p class="font-body-lg text-body-lg text-surface-container-high/85 mt-3">
+          Every contribution helps create opportunities, strengthen communities and support people facing difficult circumstances.
+        </p>
+</div>
+<!-- Donation Card Component -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 lg:p-12 text-on-surface shadow-2xl max-w-3xl mx-auto">
+<!-- Frequency Selector -->
+<div class="flex items-center justify-center mb-8">
+<div class="inline-flex p-1.5 rounded-full bg-surface-container-low" id="frequency-toggle">
+<button class="freq-btn px-8 py-2.5 rounded-full font-label-md text-label-md transition-all bg-secondary text-white shadow-sm" data-frequency="once" type="button">
+              One-Time
+            </button>
+<button class="freq-btn px-8 py-2.5 rounded-full font-label-md text-label-md transition-all text-on-surface-variant hover:text-on-surface" data-frequency="monthly" type="button">
+              Monthly
+            </button>
+</div>
+</div>
+<!-- Amount Chips Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6" id="amount-chips">
+<button class="amount-chip flex flex-col items-center justify-center p-4 rounded-xl bg-surface hover:bg-surface-container-low transition-all text-center" data-amount="25" type="button">
+<span class="font-stat-metric text-headline-md text-primary font-bold">$25</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1">School books for 3 children</span>
+</button>
+<button class="amount-chip active-chip flex flex-col items-center justify-center p-4 rounded-xl bg-secondary/10 transition-all text-center" data-amount="50" type="button">
+<span class="font-stat-metric text-headline-md text-secondary font-bold">$50</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1">Clean water for a family</span>
+</button>
+<button class="amount-chip flex flex-col items-center justify-center p-4 rounded-xl bg-surface hover:bg-surface-container-low transition-all text-center" data-amount="100" type="button">
+<span class="font-stat-metric text-headline-md text-primary font-bold">$100</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1">Clinic supplies for 20 patients</span>
+</button>
+<button class="amount-chip flex flex-col items-center justify-center p-4 rounded-xl bg-surface hover:bg-surface-container-low transition-all text-center" data-amount="250" type="button">
+<span class="font-stat-metric text-headline-md text-primary font-bold">$250</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1">Community micro-grant</span>
+</button>
+</div>
+<!-- Custom Amount & Designation Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+<div>
+<label class="block font-label-md text-label-md text-primary mb-2">Custom Amount ($ USD)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-headline-sm text-headline-sm text-on-surface-variant">$</span>
+<input class="w-full h-12 pl-10 pr-4 rounded-xl bg-surface-container-low text-primary font-label-lg text-label-lg focus:outline-none focus:bg-surface-container-high transition-all" id="custom-amount-input" placeholder="Other amount" type="number"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-2">Designate to Specific Program</label>
+<select class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-primary font-body-md text-body-md focus:outline-none focus:bg-surface-container-high transition-all">
+<option>Where Needed Most</option>
+<option>Education Initiatives</option>
+<option>Humanitarian Medical Aid</option>
+<option>Community Solar &amp; Water</option>
+<option>Economic Empowerment Grants</option>
+</select>
+</div>
+</div>
+<!-- Buttons Row -->
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<a class="w-full sm:flex-1 py-4 rounded-xl bg-secondary text-white font-label-lg text-label-lg text-center shadow-md hover:bg-secondary/90 transition-all flex items-center justify-center gap-2" data-path="donate" href="#">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span id="donate-btn-text">COMPLETE $50 DONATION</span>
+</a>
+<a class="w-full sm:w-auto px-6 py-4 rounded-xl bg-surface-container text-primary font-label-lg text-label-lg text-center hover:bg-surface-container-high transition-all" data-path="get-involved" href="#">
+            BECOME A PARTNER
+          </a>
+</div>
+<!-- Security & Audit Micro-Trust Bar -->
+<div class="pt-8 mt-8 flex flex-wrap items-center justify-center gap-6 text-on-surface-variant font-body-sm text-body-sm text-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">lock</span>
+<span>256-bit SSL Secure Donation</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>100% Tax Deductible (501c3)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">monitoring</span>
+<span>Transparent Impact Tracking</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. VOLUNTEER & GET INVOLVED -->
+<section class="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-24">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">COLLABORATIVE ACTION</span>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl text-primary font-bold mt-2">
+        Be Part of the Change
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
+        Discover meaningful ways to contribute your expertise, time, or voice to empower communities worldwide.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="flex flex-col p-8 rounded-2xl bg-surface-container-low justify-between gap-6 hover:shadow-lg transition-all duration-300">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[30px]">schedule</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Volunteer Your Time</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Join medical dispatch squads, remote engineering cohorts, or mentor localized youth groups virtually and on the ground.
+          </p>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-3 transition-all" data-path="get-involved" href="#">
+<span>Apply to Volunteer</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col p-8 rounded-2xl bg-surface-container-low justify-between gap-6 hover:shadow-lg transition-all duration-300">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-secondary mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[30px]">hub</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Support Our Programmes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Underwrite high-impact infrastructure such as localized solar microgrids, community clinics, or primary school libraries.
+          </p>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-3 transition-all" data-path="get-involved" href="#">
+<span>Sponsor an Initiative</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col p-8 rounded-2xl bg-surface-container-low justify-between gap-6 hover:shadow-lg transition-all duration-300">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-surface-container-lowest flex items-center justify-center text-primary mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[30px]">campaign</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Become a Community Advocate</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Champion educational and nutritional equity in your school, church, or corporate network with our turnkey advocacy toolkits.
+          </p>
+</div>
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-3 transition-all" data-path="get-involved" href="#">
+<span>Get Advocacy Toolkit</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="text-center mt-12">
+<a class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-label-lg text-label-lg shadow-md hover:bg-secondary/90 transition-all hover:-translate-y-0.5" data-path="get-involved" href="#">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+<span>BECOME A VOLUNTEER TODAY</span>
+</a>
+</div>
+</section>
+<!-- 10. PARTNERS / SUPPORTERS LOGO GRID -->
+<section class="w-full bg-surface-container-low/50 py-16">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-8">
+        Working Together for Greater Impact With Trusted Global Organizations
+      </span>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center opacity-70">
+<div class="flex items-center justify-center gap-2 text-primary font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-[28px] text-secondary">health_and_safety</span>
+<span>GLOBAL AID</span>
+</div>
+<div class="flex items-center justify-center gap-2 text-primary font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-[28px] text-secondary">water_drop</span>
+<span>AQUA TRUST</span>
+</div>
+<div class="flex items-center justify-center gap-2 text-primary font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-[28px] text-secondary">solar_power</span>
+<span>SUN ECO ALLIANCE</span>
+</div>
+<div class="flex items-center justify-center gap-2 text-primary font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-[28px] text-secondary">school</span>
+<span>EDULINK INTL</span>
+</div>
+<div class="flex items-center justify-center gap-2 text-primary font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-[28px] text-secondary">foundation</span>
+<span>HORIZON DEV</span>
+</div>
+<div class="flex items-center justify-center gap-2 text-primary font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-[28px] text-secondary">public</span>
+<span>UNITED REACH</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 11. LATEST NEWS & STORIES -->
+<section class="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-24">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">UPDATES FROM THE FIELD</span>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl text-primary font-bold mt-2">
+          Latest News &amp; Stories
+        </h2>
+</div>
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface-container-high text-primary font-label-md text-label-md hover:bg-surface-container transition-all self-start md:self-auto" data-path="news-and-stories" href="#">
+<span>VIEW ALL STORIES</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- News 1 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
+<div class="p-7 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm">Field Dispatch</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">June 02, 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+            RISE Expands Clean Water Infrastructure to 12 Additional Villages
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Through solar-powered deep boreholes, an additional 18,000 residents gain direct access to potable drinking water.
+          </p>
+</div>
+<div class="px-7 pb-7 pt-2">
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-3 transition-all" data-path="news-and-stories" href="#">
+<span>Read More</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- News 2 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
+<div class="p-7 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm">Education</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">May 21, 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+            Annual Teacher Training Fellowship Welcomes 140 Regional Educators
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Providing modern pedagogical tools, digital tablets, and certified STEM curriculum training to rural primary teachers.
+          </p>
+</div>
+<div class="px-7 pb-7 pt-2">
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-3 transition-all" data-path="news-and-stories" href="#">
+<span>Read More</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- News 3 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between">
+<div class="p-7 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm">Impact Report</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">April 15, 2024</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">
+            2023 Fiscal Stewardship &amp; Humanitarian Audits Released
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Our clean audit reaffirmation proves that 88% of every dollar continues to fund verified on-the-ground interventions.
+          </p>
+</div>
+<div class="px-7 pb-7 pt-2">
+<a class="inline-flex items-center gap-2 text-secondary font-label-md text-label-md hover:gap-3 transition-all" data-path="news-and-stories" href="#">
+<span>Read More</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- 12. NEWSLETTER SIGNUP -->
+<section class="w-full bg-surface-container-high py-20">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="bg-primary text-on-primary rounded-3xl p-8 lg:p-14 shadow-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-6">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider">MONTHLY DISPATCH</span>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl text-white font-bold mt-2">
+              Stay Connected With Our Work
+            </h2>
+<p class="font-body-md text-body-md text-surface-container-high/80 mt-3">
+              Receive quarterly field updates, photostories from our clinics, and transparent audits directly to your inbox.
+            </p>
+</div>
+<div class="lg:col-span-6">
+<form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to RISE International updates.');">
+<input class="px-4 py-3.5 rounded-xl bg-surface-container-lowest/10 text-white placeholder-surface-container-high/60 focus:outline-none focus:bg-surface-container-lowest/20 flex-1 sm:max-w-[160px]" placeholder="First Name" required="" type="text"/>
+<input class="px-4 py-3.5 rounded-xl bg-surface-container-lowest/10 text-white placeholder-surface-container-high/60 focus:outline-none focus:bg-surface-container-lowest/20 flex-1" placeholder="Email Address" required="" type="email"/>
+<button class="px-7 py-3.5 rounded-xl bg-secondary text-white font-label-lg text-label-lg hover:bg-secondary/90 transition-all flex-shrink-0" type="submit">
+                SUBSCRIBE
+              </button>
+</form>
+<span class="font-body-sm text-body-sm text-surface-container-high/60 text-xs block mt-3">
+              We respect your privacy. Unsubscribe at any time.
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 13. CONTACT TEASER -->
+<section class="w-full max-w-[1440px] mx-auto px-6 lg:px-12 py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">GET IN TOUCH</span>
+<h2 class="font-headline-xl text-headline-lg lg:text-headline-xl text-primary font-bold mt-2">
+            Let’s Create Change Together
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">
+            Have questions about institutional grants, child sponsorship, corporate matching, or field visits? Reach out to our global coordination headquarters.
+          </p>
+</div>
+<div class="flex flex-col gap-4 pt-2">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">phone_in_talk</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-xs">DIRECT COORDINATION</span>
+<p class="font-label-lg text-label-lg text-primary">+49 1520-6777889</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">mail</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-xs">OFFICIAL INQUIRIES</span>
+<p class="font-label-lg text-label-lg text-primary">info@riseintl.org</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Contact Card -->
+<div class="lg:col-span-7 bg-surface-container-low p-8 lg:p-10 rounded-3xl shadow-sm">
+<form class="grid grid-cols-1 sm:grid-cols-2 gap-4" onsubmit="event.preventDefault(); alert('Message sent. Our coordination team will respond within 24 hours.');">
+<div>
+<label class="block font-label-md text-label-md text-primary mb-2">Your Name</label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary/30" placeholder="e.g. Sarah Jenkins" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-2">Email Address</label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary/30" placeholder="sarah@example.org" required="" type="email"/>
+</div>
+<div class="sm:col-span-2">
+<label class="block font-label-md text-label-md text-primary mb-2">Inquiry Type</label>
+<select class="w-full h-12 px-4 rounded-xl bg-surface text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary/30">
+<option>General Questions</option>
+<option>Corporate Partnership &amp; Matching</option>
+<option>Volunteering Inquiry</option>
+<option>Press &amp; Media Inquiries</option>
+</select>
+</div>
+<div class="sm:col-span-2">
+<label class="block font-label-md text-label-md text-primary mb-2">How can we assist you?</label>
+<textarea class="w-full p-4 rounded-xl bg-surface text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary/30" placeholder="Share how you would like to partner with RISE International..." required="" rows="3"></textarea>
+</div>
+<div class="sm:col-span-2 pt-2">
+<button class="w-full py-4 rounded-xl bg-primary text-white font-label-lg text-label-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2" type="submit">
+<span>SEND MESSAGE</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript for Donation Calculator Component -->
+<script>
+    (function initDonationCalculator() {
+      let currentAmount = 50;
+      let frequency = 'once';
+
+      const chips = document.querySelectorAll('.amount-chip');
+      const customInput = document.getElementById('custom-amount-input');
+      const donateBtnText = document.getElementById('donate-btn-text');
+      const freqButtons = document.querySelectorAll('.freq-btn');
+
+      function updateButton() {
+        const freqText = frequency === 'monthly' ? '/ month' : '';
+        donateBtnText.textContent = 'COMPLETE $' + currentAmount + ' DONATION ' + freqText;
+      }
+
+      freqButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          freqButtons.forEach(b => {
+            b.classList.remove('bg-secondary', 'text-white', 'shadow-sm');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-secondary', 'text-white', 'shadow-sm');
+          btn.classList.remove('text-on-surface-variant');
+          frequency = btn.dataset.frequency;
+          updateButton();
+        });
+      });
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => {
+            c.classList.remove('bg-secondary/10');
+            c.classList.add('bg-surface');
+            const metricSpan = c.querySelector('span:first-child');
+            if (metricSpan) {
+              metricSpan.classList.remove('text-secondary');
+              metricSpan.classList.add('text-primary');
+            }
+          });
+          chip.classList.add('bg-secondary/10');
+          chip.classList.remove('bg-surface');
+          const activeSpan = chip.querySelector('span:first-child');
+          if (activeSpan) {
+            activeSpan.classList.remove('text-primary');
+            activeSpan.classList.add('text-secondary');
+          }
+          currentAmount = chip.dataset.amount;
+          if (customInput) customInput.value = '';
+          updateButton();
+        });
+      });
+
+      if (customInput) {
+        customInput.addEventListener('input', (e) => {
+          const val = parseInt(e.target.value, 10);
+          if (val && val > 0) {
+            chips.forEach(c => {
+              c.classList.remove('bg-secondary/10');
+              c.classList.add('bg-surface');
+              const metricSpan = c.querySelector('span:first-child');
+              if (metricSpan) {
+                metricSpan.classList.remove('text-secondary');
+                metricSpan.classList.add('text-primary');
+              }
+            });
+            currentAmount = val;
+            updateButton();
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low text-on-surface"><div class="max-w-[1440px] mx-auto px-6 lg:px-12 pt-16 pb-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12"><div class="lg:col-span-4 flex flex-col gap-4"><div class="flex items-center gap-3"><img alt="RISE International Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XLYbvW6osJUSeZKEM0bPrJuIKFB3sufWLdS5L15WM2i2xJTD00Bk5PoEVrKmThwj-YoIJnBmDanu_7IiIuhN7SQWHG73Wf6PuvCaaZAb_Q_ITxE778nZKnF-SVi5XdoXMpDV5NnU3c3vTt3-cTHuUFwS-g8PQXkgeBS354nmEPQlqshkNd24VdV6-iVQbjW_47FVXdI-_0GtCjUeIx4jHpaNhOqglIJUTSwPj5SRlvP1QWrdWVbBC5YcGD"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">RISE International</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Empowering Communities. Transforming Lives.</p><p class="font-body-sm text-body-sm text-on-surface-variant">Registered 501(c)(3) International Non-Governmental Organization dedicated to sustainable education, relief, and economic dignity worldwide.</p><div class="flex items-center gap-2 pt-2"><a aria-label="Facebook" class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a><a aria-label="Platform" class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">share</span></a><a aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">work</span></a><a aria-label="Community Feed" class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">photo_camera</span></a><a aria-label="Video Channel" class="w-9 h-9 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">play_arrow</span></a></div></div><div class="lg:col-span-2 flex flex-col gap-3"><span class="font-label-lg text-label-lg text-primary tracking-tight">Quick Links</span><ul class="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="about-us" href="#">About Us</a></li><li><a class="hover:text-on-surface transition-colors" data-path="our-work" href="#">Our Work</a></li><li><a class="hover:text-on-surface transition-colors" data-path="impact" href="#">Impact</a></li><li><a class="hover:text-on-surface transition-colors" data-path="news-and-stories" href="#">News &amp; Stories</a></li><li><a class="hover:text-on-surface transition-colors" data-path="contact-us" href="#">Contact Us</a></li></ul></div><div class="lg:col-span-3 flex flex-col gap-3"><span class="font-label-lg text-label-lg text-primary tracking-tight">Get Involved</span><ul class="flex flex-col gap-2.5 font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface transition-colors" data-path="donate" href="#">Donate</a></li><li><a class="hover:text-on-surface transition-colors" data-path="get-involved" href="#">Sponsor a Child</a></li><li><a class="hover:text-on-surface transition-colors" data-path="get-involved" href="#">Volunteer Opportunities</a></li><li><a class="hover:text-on-surface transition-colors" data-path="get-involved" href="#">Partner With Us</a></li><li><a class="hover:text-on-surface transition-colors" data-path="impact" href="#">Annual Reports &amp; Fiscal Audits</a></li></ul></div><div class="lg:col-span-3 flex flex-col gap-3"><span class="font-label-lg text-label-lg text-primary tracking-tight">Contact &amp; Verification</span><div class="flex flex-col gap-2 text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-secondary">call</span><span>+49 1520-6777889</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-secondary">mail</span><span>info@riseintl.org</span></div></div><div class="mt-3 p-4 rounded-xl bg-surface-container flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[24px]">verified</span><div><p class="font-label-md text-label-md text-primary">Transparent Reporting</p><p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-0.5">Independently audited governance. 88% of funds go directly toward field programs.</p></div></div></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant text-xs"><p>© RISE International. All rights reserved.</p><div class="flex flex-wrap items-center gap-6"><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Terms &amp; Conditions</a><a class="hover:text-on-surface transition-colors" href="#">Cookie Policy</a></div></div></div></footer></body></html>
