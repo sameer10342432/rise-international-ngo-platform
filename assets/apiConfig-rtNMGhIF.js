@@ -1,0 +1,1 @@
+function e(){let e=`http://localhost:5000/api`;return typeof window<`u`&&(window.location.hostname===`localhost`||window.location.hostname===`127.0.0.1`)&&e.includes(`riseintl.org`)?`http://localhost:5000/api`:e}export{e as t};
