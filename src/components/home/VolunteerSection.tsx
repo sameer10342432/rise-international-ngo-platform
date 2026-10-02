@@ -16,6 +16,17 @@ export const VolunteerSection: React.FC = () => {
         </p>
       </div>
 
+      <div className="mb-14 rounded-3xl overflow-hidden shadow-level-2 border border-outline-variant/30">
+        <img
+          src="/images/rise-home-volunteer-action.webp"
+          alt="International and local volunteers collaborating side by side planting indigenous trees and building community center"
+          className="w-full h-64 sm:h-80 lg:h-96 object-cover"
+          loading="lazy"
+          width={1344}
+          height={768}
+        />
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Card 1: Volunteer Your Time */}
         <div className="flex flex-col p-8 rounded-2xl bg-surface-container-low justify-between gap-6 hover:shadow-level-2 transition-all duration-300 border border-outline-variant/30">

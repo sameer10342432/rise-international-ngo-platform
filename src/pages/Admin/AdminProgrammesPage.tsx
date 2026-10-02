@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AdminLayout } from '../../components/admin/AdminLayout';
 import { adminService } from '../../services/adminService';
+import { SeoEditorFields, SeoFields } from '../../components/admin/SeoEditorFields';
+import { AiAssistantModal } from '../../components/admin/AiAssistantModal';
 
 export const AdminProgrammesPage: React.FC = () => {
   const [programmes, setProgrammes] = useState<any[]>([]);
@@ -8,6 +10,7 @@ export const AdminProgrammesPage: React.FC = () => {
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAiModalOpen, setIsAiModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState<any | null>(null);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -16,16 +19,24 @@ export const AdminProgrammesPage: React.FC = () => {
   // Form state
   const [formData, setFormData] = useState({
     title: '',
+    slug: '',
     category: 'education',
     shortDescription: '',
     description: '',
     mission: '',
-    image: '/images/classroom-children-education.png',
+    image: '/images/education-programme-classroom-learning.jpg',
     icon: 'school',
     status: 'published',
     sortOrder: 1,
     whatWeDo: '',
     impactPoints: '',
+    seoTitle: '',
+    seoDescription: '',
+    canonicalUrl: '',
+    ogTitle: '',
+    ogDescription: '',
+    ogImage: '',
+    noindex: false,
   });
 
   const loadProgrammes = async () => {
@@ -48,16 +59,24 @@ export const AdminProgrammesPage: React.FC = () => {
     setEditingItem(null);
     setFormData({
       title: '',
+      slug: '',
       category: 'education',
       shortDescription: '',
       description: '',
       mission: '',
-      image: '/images/classroom-children-education.png',
+      image: '/images/education-programme-classroom-learning.jpg',
       icon: 'school',
       status: 'published',
       sortOrder: programmes.length + 1,
       whatWeDo: '',
       impactPoints: '',
+      seoTitle: '',
+      seoDescription: '',
+      canonicalUrl: '',
+      ogTitle: '',
+      ogDescription: '',
+      ogImage: '/images/education-programme-classroom-learning.jpg',
+      noindex: false,
     });
     setIsModalOpen(true);
   };
@@ -65,19 +84,51 @@ export const AdminProgrammesPage: React.FC = () => {
   const openEditModal = (item: any) => {
     setEditingItem(item);
     setFormData({
-      title: item.title,
-      category: item.category,
+      title: item.title || '',
+      slug: item.slug || '',
+      category: item.category || 'education',
       shortDescription: item.shortDescription || '',
       description: item.description || '',
       mission: item.mission || '',
-      image: item.image || '/images/classroom-children-education.png',
+      image: item.image || '/images/education-programme-classroom-learning.jpg',
       icon: item.icon || 'school',
       status: item.status || 'published',
       sortOrder: item.sortOrder || 1,
       whatWeDo: Array.isArray(item.whatWeDo) ? item.whatWeDo.join('\n') : '',
       impactPoints: Array.isArray(item.impactPoints) ? item.impactPoints.join('\n') : '',
+      seoTitle: item.seoTitle || `${item.title} | Our Work | RISE International`,
+      seoDescription: item.seoDescription || item.shortDescription || '',
+      canonicalUrl: item.canonicalUrl || `https://riseintl.org/our-work/${item.slug || ''}`,
+      ogTitle: item.ogTitle || item.title || '',
+      ogDescription: item.ogDescription || item.shortDescription || '',
+      ogImage: item.ogImage || item.image || '/images/education-programme-classroom-learning.jpg',
+      noindex: Boolean(item.noindex),
     });
     setIsModalOpen(true);
+  };
+
+  const handleApplyAiData = (payload: { mode: string; data: any }) => {
+    const { mode, data } = payload;
+    if (mode === 'programme') {
+      setFormData((prev) => ({
+        ...prev,
+        title: data.title || prev.title,
+        shortDescription: data.shortDescription || prev.shortDescription,
+        description: data.fullDescription || prev.description,
+        mission: data.mission || prev.mission,
+        whatWeDo: Array.isArray(data.whatWeDo) ? data.whatWeDo.join('\n') : prev.whatWeDo,
+        seoTitle: `${data.title || prev.title} | Our Work | RISE International`,
+        seoDescription: data.shortDescription || prev.seoDescription,
+      }));
+    } else if (mode === 'seo') {
+      setFormData((prev) => ({
+        ...prev,
+        seoTitle: data.seoTitle || prev.seoTitle,
+        seoDescription: data.metaDescription || prev.seoDescription,
+        ogTitle: data.seoTitle || prev.ogTitle,
+        ogDescription: data.metaDescription || prev.ogDescription,
+      }));
+    }
   };
 
   const handleImageFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -164,13 +215,22 @@ export const AdminProgrammesPage: React.FC = () => {
               Manage the 4 foundational pillars and community field initiatives.
             </p>
           </div>
-          <button
-            onClick={openCreateModal}
-            className="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2.5 rounded-lg shadow-sm transition-colors"
-          >
-            <span className="material-symbols-outlined text-base">add</span>
-            <span>Add New Programme</span>
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setIsAiModalOpen(true)}
+              className="inline-flex items-center space-x-1.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white text-xs font-semibold px-4 py-2.5 rounded-lg shadow-sm transition-all"
+            >
+              <span className="material-symbols-outlined text-base">auto_awesome</span>
+              <span>AI Programme Assistant</span>
+            </button>
+            <button
+              onClick={openCreateModal}
+              className="inline-flex items-center space-x-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold px-4 py-2.5 rounded-lg shadow-sm transition-colors"
+            >
+              <span className="material-symbols-outlined text-base">add</span>
+              <span>Add New Programme</span>
+            </button>
+          </div>
         </div>
 
         {/* Filters */}
@@ -436,6 +496,23 @@ export const AdminProgrammesPage: React.FC = () => {
                   />
                 </div>
 
+                {/* Section 58 SEO Fields */}
+                <SeoEditorFields
+                  values={{
+                    slug: formData.slug,
+                    seoTitle: formData.seoTitle,
+                    seoDescription: formData.seoDescription,
+                    canonicalUrl: formData.canonicalUrl,
+                    ogTitle: formData.ogTitle,
+                    ogDescription: formData.ogDescription,
+                    ogImage: formData.ogImage,
+                    noindex: formData.noindex,
+                  }}
+                  onChange={(fields: Partial<SeoFields>) => {
+                    setFormData((prev) => ({ ...prev, ...fields }));
+                  }}
+                />
+
                 <div className="flex justify-end space-x-2 pt-3 border-t border-slate-100">
                   <button
                     type="button"
@@ -456,6 +533,16 @@ export const AdminProgrammesPage: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* AI Assistant Modal for Programmes */}
+        <AiAssistantModal
+          isOpen={isAiModalOpen}
+          onClose={() => setIsAiModalOpen(false)}
+          pageTitle={formData.title || 'Programme'}
+          pageType="programme"
+          currentContent={formData.description}
+          onApply={handleApplyAiData}
+        />
       </div>
     </AdminLayout>
   );

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SEO } from '../../components/common/SEO';
+import { Breadcrumbs } from '../../components/common/Breadcrumbs';
+import { FaqAccordion } from '../../components/common/FaqAccordion';
 import { ContactMessage, SubmissionStatus } from '../../types';
 import { contactService } from '../../services/contactService';
 import { organizationInfo } from '../../data/organization';
@@ -10,6 +12,25 @@ import { Select } from '../../components/forms/Select';
 import { Textarea } from '../../components/forms/Textarea';
 import { SubmitButton } from '../../components/forms/SubmitButton';
 import { validators, validateField } from '../../utils/validation';
+
+const contactFaqs = [
+  {
+    question: "How can I contact RISE International?",
+    answer: "You can reach us by email at info@riseintl.org, by telephone at +49 1520-6777889, or by submitting an inquiry via our contact form.",
+  },
+  {
+    question: "When can I expect a response to my inquiry?",
+    answer: "Our team typically reviews and responds to general inquiries within 2 to 3 business days.",
+  },
+  {
+    question: "Who should I contact regarding partnership proposals?",
+    answer: "You can submit your proposal via our contact form under 'Partnership Inquiries' or visit our Partner With Us page for detailed collaboration areas.",
+  },
+  {
+    question: "How can I update or inquire about my donation?",
+    answer: "Please contact info@riseintl.org with your confirmation ID or donor email, and our stewardship team will assist you directly.",
+  },
+];
 
 export const ContactPage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -29,11 +50,11 @@ export const ContactPage: React.FC = () => {
 
   const subjectOptions = [
     { value: 'General Enquiry', label: 'General Enquiry' },
-    { value: 'Donation', label: 'Donation & Tax Receipts' },
-    { value: 'Volunteering', label: 'Volunteering & Deployments' },
-    { value: 'Partnership', label: 'Partnership & CSR Grants' },
+    { value: 'Donation', label: 'Donation & Contributions' },
+    { value: 'Volunteering', label: 'Volunteering Inquiries' },
+    { value: 'Partnership', label: 'Partnership & Collaboration' },
     { value: 'Programme Information', label: 'Programme Information' },
-    { value: 'Media', label: 'Media & Press Inquiries' },
+    { value: 'Media', label: 'Media & Communications' },
   ];
 
   const validate = (): boolean => {
@@ -69,39 +90,62 @@ export const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col">
       <SEO
         title="Contact Us | RISE International"
-        description="Get in touch with RISE International headquarters. Phone: +49 1520-6777889, Email: info@riseintl.org."
+        description="Get in touch with RISE International. Contact us by phone at +49 1520-6777889 or email at info@riseintl.org with questions, partnership inquiries, or volunteer applications."
+        canonical="https://riseintl.org/contact"
+        ogImage="/images/rise-contact-hero-dialogue.webp"
+        breadcrumbs={[
+          { name: "Home", item: "https://riseintl.org/" },
+          { name: "Contact", item: "https://riseintl.org/contact" },
+        ]}
+        faqs={contactFaqs}
       />
 
-      <section className="bg-primary-container text-white py-16 lg:py-20 text-center">
-        <div className="max-w-content mx-auto px-6 lg:px-12">
+      {/* Hero Banner */}
+      <section className="bg-primary-container text-white py-16 lg:py-20 text-center relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/rise-contact-hero-dialogue.webp"
+            alt="RISE International community liaison officer welcoming visitors and community members at an open information desk"
+            className="w-full h-full object-cover opacity-25"
+            loading="eager"
+            width={1344}
+            height={768}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/90 to-primary-container/60" />
+        </div>
+        <div className="relative z-10 max-w-content mx-auto px-6 lg:px-12">
+          <div className="mb-4">
+            <Breadcrumbs items={[{ label: "Contact" }]} className="text-white/80 justify-center" />
+          </div>
           <span className="font-label-sm text-secondary-fixed uppercase tracking-wider font-bold">
-            GLOBAL COORDINATION
+            OPEN COMMUNICATION
           </span>
           <h1 className="font-display-hero text-4xl sm:text-5xl font-extrabold mt-2">
             Contact RISE International
           </h1>
-          <p className="font-body-lg text-surface-container-high/90 max-w-xl mx-auto mt-3">
-            Have questions regarding our field initiatives, donor receipts, or volunteering? We are here to help.
+          <p className="font-body-lg text-surface-container-high/90 max-w-xl mx-auto mt-3 leading-relaxed">
+            We welcome inquiries regarding our programmes, collaborative partnerships, donations, or volunteering. Please reach out to our team using the details or contact form below.
           </p>
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 lg:px-8 py-20">
+      {/* Main Contact Section */}
+      <section className="max-w-5xl mx-auto px-6 lg:px-8 py-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Column: Contact Details (Strict adherence: NO fake addresses or fake maps) */}
-          <div className="lg:col-span-5 flex flex-col gap-8">
+          {/* Left Column: Direct Contact Info & Response Expectations */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
             <div>
               <span className="font-label-sm text-secondary uppercase tracking-wider font-bold">
-                COMMUNICATION DESK
+                DIRECT INQUIRIES
               </span>
               <h2 className="font-headline-xl text-2xl sm:text-3xl font-bold text-primary mt-1">
                 Reach Out Directly
               </h2>
               <p className="font-body-md text-on-surface-variant mt-2 leading-relaxed">
-                Our administrative coordination and field logistics officers respond to inquiries promptly during international business hours.
+                Whether you have a general inquiry or wish to explore a collaboration, we look forward to hearing from you.
               </p>
             </div>
 
@@ -137,12 +181,14 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-primary text-white">
-              <span className="font-label-sm text-secondary-fixed font-bold uppercase text-xs">
-                Accountability Assurance
-              </span>
-              <p className="font-body-sm text-surface-container-high/90 text-sm mt-2 leading-relaxed">
-                Every official donation receipt and partnership inquiry is certified through our central governance registry.
+            {/* Response Expectation Wording */}
+            <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30">
+              <div className="flex items-center gap-2 text-secondary font-bold text-sm mb-2">
+                <span className="material-symbols-outlined text-[20px]">schedule</span>
+                <span>Response Expectation</span>
+              </div>
+              <p className="font-body-sm text-on-surface-variant text-sm leading-relaxed">
+                Our coordination team typically responds to all inquiries within <strong>2 to 3 business days</strong>. We appreciate your patience and interest in our work.
               </p>
             </div>
           </div>
@@ -168,7 +214,7 @@ export const ContactPage: React.FC = () => {
                       message: '',
                     });
                   }}
-                  className="px-6 py-3 rounded-xl bg-primary text-white font-label-md font-bold"
+                  className="px-6 py-3 rounded-xl bg-primary text-white font-label-md font-bold hover:bg-primary/90 transition-all"
                 >
                   Send Another Message
                 </button>
@@ -181,7 +227,7 @@ export const ContactPage: React.FC = () => {
                       id="contactFullName"
                       type="text"
                       required
-                      placeholder="e.g. Marcus Vance"
+                      placeholder="e.g. Elena Rostova"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                       error={Boolean(errors.fullName)}
@@ -193,7 +239,7 @@ export const ContactPage: React.FC = () => {
                       id="contactEmail"
                       type="email"
                       required
-                      placeholder="marcus@example.com"
+                      placeholder="you@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       error={Boolean(errors.email)}
@@ -206,14 +252,14 @@ export const ContactPage: React.FC = () => {
                     <Input
                       id="contactPhone"
                       type="tel"
-                      placeholder="+49 1520-0000000"
+                      placeholder="+49 ..."
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       error={Boolean(errors.phone)}
                     />
                   </FormField>
 
-                  <FormField id="contactSubject" label="Subject" required>
+                  <FormField id="contactSubject" label="Inquiry Subject" required>
                     <Select
                       id="contactSubject"
                       options={subjectOptions}
@@ -233,7 +279,7 @@ export const ContactPage: React.FC = () => {
                     id="contactMessage"
                     rows={4}
                     required
-                    placeholder="How can we assist you or collaborate?"
+                    placeholder="Please write your inquiry here..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     error={Boolean(errors.message)}
@@ -241,7 +287,7 @@ export const ContactPage: React.FC = () => {
                 </FormField>
 
                 {status === 'error' && (
-                  <div role="alert" className="p-3 rounded-xl bg-error-container/40 text-error text-xs flex items-center gap-2">
+                  <div role="alert" className="p-3 rounded-xl bg-error-container text-on-error-container text-xs flex items-center gap-2">
                     <span className="material-symbols-outlined text-[16px]">error</span>
                     <span>{feedback}</span>
                   </div>
@@ -249,20 +295,27 @@ export const ContactPage: React.FC = () => {
 
                 <div className="pt-2">
                   <SubmitButton
-                    isLoading={status === 'loading'}
-                    loadingText="Sending message..."
-                    variant="primary"
-                    icon="send"
-                    className="w-full"
-                  >
-                    SEND MESSAGE
-                  </SubmitButton>
+                    loading={status === 'loading'}
+                    text="Send Message"
+                    className="w-full bg-primary text-white hover:bg-primary/90 shadow-md font-bold py-3.5"
+                  />
                 </div>
+
+                <p className="text-center font-body-sm text-xs text-on-surface-variant">
+                  We respect your privacy. Inquiries are stored securely and never shared with third parties.
+                </p>
               </form>
             )}
           </div>
         </div>
       </section>
+
+      {/* Contact FAQs */}
+      <FaqAccordion
+        title="Contact &amp; Communication FAQs"
+        subtitle="Helpful answers regarding inquiry channels, partnerships, and response times."
+        faqs={contactFaqs}
+      />
     </div>
   );
 };

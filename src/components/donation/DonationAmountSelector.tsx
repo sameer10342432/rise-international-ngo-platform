@@ -8,10 +8,10 @@ interface DonationAmountSelectorProps {
 }
 
 export const predefinedAmounts = [
-  { amount: 25, impact: 'School books for 3 children' },
-  { amount: 50, impact: 'Clean water for a family' },
-  { amount: 100, impact: 'Clinic supplies for 20 patients' },
-  { amount: 250, impact: 'Community micro-grant' },
+  { amount: 25, impact: 'Helps support essential supplies' },
+  { amount: 50, impact: 'Helps fund community resources' },
+  { amount: 100, impact: 'Supports local programme delivery' },
+  { amount: 250, impact: 'Supports capacity building & training' },
 ];
 
 export const DonationAmountSelector: React.FC<DonationAmountSelectorProps> = ({
@@ -24,7 +24,7 @@ export const DonationAmountSelector: React.FC<DonationAmountSelectorProps> = ({
 
   return (
     <div className="flex flex-col gap-6">
-      {/* 4 Amount Chips */}
+      {/* 4 Amount Chips: $25, $50, $100, $250 */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4" role="radiogroup" aria-label="Predefined donation amounts">
         {predefinedAmounts.map((chip) => {
           const isSelected = !isCustomActive && selectedAmount === chip.amount;
@@ -70,7 +70,7 @@ export const DonationAmountSelector: React.FC<DonationAmountSelectorProps> = ({
             type="number"
             min="1"
             step="1"
-            placeholder="Other amount (e.g. 75, 500)"
+            placeholder="Custom amount (e.g. 75, 500)"
             value={customAmount}
             onChange={(e) => onCustomAmountChange(e.target.value)}
             className="w-full h-12 pl-10 pr-4 rounded-xl bg-surface-container-low text-primary font-label-lg text-label-lg focus:outline-none focus:bg-surface-container-high focus:ring-2 focus:ring-secondary/30 transition-all border border-outline-variant/30"

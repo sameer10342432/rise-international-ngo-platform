@@ -25,7 +25,18 @@ export const MissionVisionPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-20">
+      <section className="max-w-4xl mx-auto px-6 py-16">
+        <div className="mb-12 rounded-3xl overflow-hidden shadow-level-2 border border-outline-variant/30">
+          <img
+            src="/images/rise-about-mission-opportunity.webp"
+            alt="Students and teachers smiling together outside a newly built solar-powered rural school library"
+            className="w-full h-72 sm:h-96 object-cover"
+            loading="lazy"
+            width={1024}
+            height={768}
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div className="p-8 rounded-3xl bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between">
             <div>

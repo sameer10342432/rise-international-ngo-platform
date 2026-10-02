@@ -7,10 +7,10 @@ interface DonationPurposeSelectorProps {
 
 export const donationPurposes = [
   'Where Needed Most',
-  'Education Initiatives',
-  'Humanitarian Medical Aid',
-  'Community Solar & Water',
-  'Economic Empowerment Grants',
+  'Education',
+  'Humanitarian Aid',
+  'Community Development',
+  'Economic Empowerment',
 ];
 
 export const DonationPurposeSelector: React.FC<DonationPurposeSelectorProps> = ({
@@ -20,7 +20,7 @@ export const DonationPurposeSelector: React.FC<DonationPurposeSelectorProps> = (
   return (
     <div>
       <label htmlFor="donation-purpose" className="block font-label-md text-label-md text-primary mb-2 font-bold">
-        Designate to Specific Program
+        Designate Donation Purpose
       </label>
       <div className="relative">
         <select

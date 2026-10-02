@@ -34,10 +34,15 @@ export const TeamPage: React.FC = () => {
               className="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-level-1 hover:shadow-level-2 transition-all duration-300 border border-outline-variant/30 flex flex-col justify-between"
             >
               <div className="p-8">
-                <div className="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center text-primary font-bold text-2xl mb-5 border border-outline-variant/30">
-                  <span className="material-symbols-outlined text-[32px] text-secondary">
-                    badge
-                  </span>
+                <div className="w-24 h-24 rounded-2xl overflow-hidden mb-5 border-2 border-outline-variant/30 shadow-sm bg-surface-container">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    width={600}
+                    height={600}
+                  />
                 </div>
                 <span className="font-label-sm text-secondary font-bold text-xs uppercase tracking-wider block mb-1">
                   {member.department}

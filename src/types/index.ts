@@ -46,6 +46,8 @@ export interface Story {
   author: string;
   quote?: string;
   metrics?: string;
+  isDraft?: boolean;
+  draftNotice?: string;
 }
 
 export interface NewsArticle {
@@ -60,6 +62,7 @@ export interface NewsArticle {
   publishedAt: string;
   author: string;
   readTime: string;
+  isDraftDemo?: boolean;
 }
 
 export interface TeamMember {

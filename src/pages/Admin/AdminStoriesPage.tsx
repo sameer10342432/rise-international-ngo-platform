@@ -1,27 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { AdminLayout } from '../../components/admin/AdminLayout';
 import { adminService } from '../../services/adminService';
+import { SeoEditorFields } from '../../components/admin/SeoEditorFields';
+import { AiAssistantModal } from '../../components/admin/AiAssistantModal';
 
 export const AdminStoriesPage: React.FC = () => {
   const [stories, setStories] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAiModalOpen, setIsAiModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState<any | null>(null);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
 
   const [formData, setFormData] = useState({
     title: '',
+    slug: '',
     category: 'Education',
     excerpt: '',
     content: '',
-    featuredImage: '/images/classroom-children-education.png',
+    featuredImage: '/images/impact-stories-local-community-leadership.jpg',
     author: 'RISE Field Directorate',
     location: '',
     beneficiary: '',
     status: 'published',
     featured: false,
+    seoTitle: '',
+    seoDescription: '',
+    canonicalUrl: '',
+    ogTitle: '',
+    ogDescription: '',
+    ogImage: '',
+    noindex: false,
   });
 
   const loadStories = async () => {
@@ -44,15 +55,23 @@ export const AdminStoriesPage: React.FC = () => {
     setEditingItem(null);
     setFormData({
       title: '',
+      slug: '',
       category: 'Education',
       excerpt: '',
       content: '',
-      featuredImage: '/images/classroom-children-education.png',
+      featuredImage: '/images/impact-stories-local-community-leadership.jpg',
       author: 'RISE Field Directorate',
       location: '',
       beneficiary: '',
       status: 'published',
       featured: false,
+      seoTitle: '',
+      seoDescription: '',
+      canonicalUrl: '',
+      ogTitle: '',
+      ogDescription: '',
+      ogImage: '',
+      noindex: false,
     });
     setIsModalOpen(true);
   };
@@ -61,17 +80,56 @@ export const AdminStoriesPage: React.FC = () => {
     setEditingItem(item);
     setFormData({
       title: item.title,
+      slug: item.slug || '',
       category: item.category,
       excerpt: item.excerpt || '',
       content: Array.isArray(item.content) ? item.content.join('\n\n') : (item.content || ''),
-      featuredImage: item.featuredImage || '/images/classroom-children-education.png',
+      featuredImage: item.featuredImage || '/images/impact-stories-local-community-leadership.jpg',
       author: item.author || 'RISE Field Directorate',
       location: item.location || '',
       beneficiary: item.beneficiary || '',
       status: item.status || 'published',
       featured: Boolean(item.featured),
+      seoTitle: item.seoTitle || '',
+      seoDescription: item.seoDescription || '',
+      canonicalUrl: item.canonicalUrl || '',
+      ogTitle: item.ogTitle || '',
+      ogDescription: item.ogDescription || '',
+      ogImage: item.ogImage || '',
+      noindex: Boolean(item.noindex),
     });
     setIsModalOpen(true);
+  };
+
+  const handleAiApply = (generated: any) => {
+    if (generated.seoTitle || generated.metaDescription) {
+      setFormData((prev) => ({
+        ...prev,
+        seoTitle: generated.seoTitle || prev.seoTitle,
+        seoDescription: generated.metaDescription || prev.seoDescription,
+        ogTitle: generated.seoTitle || prev.ogTitle,
+        ogDescription: generated.metaDescription || prev.ogDescription,
+      }));
+    }
+    if (generated.title) {
+      setFormData((prev) => ({ ...prev, title: generated.title }));
+    }
+    if (generated.excerpt) {
+      setFormData((prev) => ({ ...prev, excerpt: generated.excerpt }));
+    }
+    if (generated.content) {
+      const formattedContent = Array.isArray(generated.content)
+        ? generated.content.join('\n\n')
+        : generated.content;
+      setFormData((prev) => ({ ...prev, content: formattedContent }));
+    }
+    if (generated.imageUrl) {
+      setFormData((prev) => ({
+        ...prev,
+        featuredImage: generated.imageUrl,
+        ogImage: generated.imageUrl,
+      }));
+    }
   };
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -223,9 +281,19 @@ export const AdminStoriesPage: React.FC = () => {
           <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
             <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto border border-slate-200">
               <div className="flex justify-between items-center border-b border-slate-100 pb-3">
-                <h3 className="text-base font-bold text-slate-900 font-serif">
-                  {editingItem ? 'Edit Field Story' : 'New Field Story'}
-                </h3>
+                <div className="flex items-center space-x-3">
+                  <h3 className="text-base font-bold text-slate-900 font-serif">
+                    {editingItem ? 'Edit Field Story' : 'New Field Story'}
+                  </h3>
+                  <button
+                    type="button"
+                    onClick={() => setIsAiModalOpen(true)}
+                    className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-sm">auto_awesome</span>
+                    <span>AI Assistant</span>
+                  </button>
+                </div>
                 <button onClick={() => setIsModalOpen(false)} className="text-slate-400">
                   <span className="material-symbols-outlined">close</span>
                 </button>
@@ -328,6 +396,24 @@ export const AdminStoriesPage: React.FC = () => {
                   </div>
                 </div>
 
+                {/* SEO Metadata Editor */}
+                <div className="pt-2">
+                  <SeoEditorFields
+                    values={{
+                      seoTitle: formData.seoTitle,
+                      seoDescription: formData.seoDescription,
+                      canonicalUrl: formData.canonicalUrl,
+                      ogTitle: formData.ogTitle,
+                      ogDescription: formData.ogDescription,
+                      ogImage: formData.ogImage,
+                      slug: formData.slug,
+                      noindex: formData.noindex,
+                    }}
+                    onChange={(vals) => setFormData((prev) => ({ ...prev, ...vals }))}
+                    basePath="/impact/stories"
+                  />
+                </div>
+
                 <div className="flex justify-end space-x-2 pt-3 border-t border-slate-100">
                   <button
                     type="button"
@@ -348,6 +434,20 @@ export const AdminStoriesPage: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* AI Assistant Modal */}
+        <AiAssistantModal
+          isOpen={isAiModalOpen}
+          onClose={() => setIsAiModalOpen(false)}
+          onApply={handleAiApply}
+          defaultMode="page-content"
+          context={{
+            pageTitle: formData.title || 'Impact & Field Stories',
+            pageType: 'story',
+            topic: formData.category || 'Community Resilience and Field Outcomes',
+            currentContent: formData.content,
+          }}
+        />
       </div>
     </AdminLayout>
   );

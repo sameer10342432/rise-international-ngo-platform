@@ -1,12 +1,37 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SEO } from '../../components/common/SEO';
+import { Breadcrumbs } from '../../components/common/Breadcrumbs';
+import { FaqAccordion } from '../../components/common/FaqAccordion';
 import { DonationFrequency, SubmissionStatus } from '../../types';
 import { donationService } from '../../services/donationService';
 import { DonationFrequencySelector } from '../../components/donation/DonationFrequencySelector';
 import { DonationAmountSelector } from '../../components/donation/DonationAmountSelector';
 import { DonationPurposeSelector, donationPurposes } from '../../components/donation/DonationPurposeSelector';
 import { DonationSummary } from '../../components/donation/DonationSummary';
+
+const donationFaqs = [
+  {
+    question: "How are donated funds utilized?",
+    answer: "Contributions directly support our people-centred programmes in Education, Community Development, Humanitarian Aid, and Economic Empowerment, alongside essential project logistics and monitoring.",
+  },
+  {
+    question: "Can I designate my gift to a specific programme?",
+    answer: "Yes. You can select 'Where Needed Most' or allocate your contribution directly to Education, Humanitarian Aid, Community Development, or Economic Empowerment.",
+  },
+  {
+    question: "Can I set up a recurring monthly donation?",
+    answer: "Yes. Selecting 'Monthly' allows you to provide dependable, ongoing support for community programmes. You can adjust or cancel your recurring contribution at any time.",
+  },
+  {
+    question: "Will I receive a confirmation receipt?",
+    answer: "Yes. An immediate digital confirmation receipt with your transaction ID and donation details is generated upon successful completion.",
+  },
+  {
+    question: "Is my payment information secure?",
+    answer: "All transactions are processed through encrypted, industry-standard payment gateways. We never store complete payment card details on our servers.",
+  },
+];
 
 export const DonatePage: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -32,7 +57,7 @@ export const DonatePage: React.FC = () => {
       return;
     }
     if (!email.trim() || !email.includes('@')) {
-      setErrorMsg('Please enter a valid donor email address for your receipt.');
+      setErrorMsg('Please enter a valid donor email address for your confirmation receipt.');
       return;
     }
 
@@ -53,32 +78,56 @@ export const DonatePage: React.FC = () => {
       setReceipt({ txId: res.transactionId, msg: res.message });
     } catch (err) {
       setStatus('error');
-      setErrorMsg(err instanceof Error ? err.message : 'Donation processing failed.');
+      setErrorMsg(err instanceof Error ? err.message : 'Donation processing failed. Please try again.');
     }
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col">
       <SEO
-        title="Donate Now | Support Life-Saving Initiatives | RISE International"
-        description="Make a secure, tax-deductible donation to RISE International. 88% of your gift directly supports ground operations in education, water, and health."
+        title="Donate | Support Community Programmes | RISE International"
+        description="Make a secure donation to RISE International. Your gift supports community-led education, clean water, humanitarian relief, and economic empowerment."
+        canonical="https://riseintl.org/donate"
+        ogImage="/images/rise-donate-hero-dignity.webp"
+        breadcrumbs={[
+          { name: "Home", item: "https://riseintl.org/" },
+          { name: "Donate", item: "https://riseintl.org/donate" },
+        ]}
+        faqs={donationFaqs}
       />
 
-      <section className="bg-primary-container text-white py-16 lg:py-20 text-center">
-        <div className="max-w-content mx-auto px-6 lg:px-12">
+      {/* Hero Banner */}
+      <section className="bg-primary-container text-white py-16 lg:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/rise-donate-hero-dignity.webp"
+            alt="A mother warmly embracing her smiling young child outdoors in natural morning sunlight, conveying hope, dignity, and family empowerment"
+            className="w-full h-full object-cover object-center opacity-25"
+            loading="eager"
+            width={1344}
+            height={768}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/90 to-primary-container/60" />
+        </div>
+
+        <div className="relative z-10 max-w-content mx-auto px-6 lg:px-12 text-center">
+          <div className="mb-4">
+            <Breadcrumbs items={[{ label: "Donate" }]} className="text-white/80 justify-center" />
+          </div>
           <span className="font-label-sm text-secondary-fixed uppercase tracking-wider font-bold">
-            IMMEDIATE STEWARDSHIP
+            TRANSPARENT GIVING
           </span>
           <h1 className="font-display-hero text-4xl sm:text-5xl font-extrabold mt-2">
-            Your Contribution Transforms Lives
+            Make a Difference Today
           </h1>
-          <p className="font-body-lg text-surface-container-high/90 max-w-xl mx-auto mt-3">
-            Join a global community of partners delivering durable hope, solar water wells, and scholastic opportunity.
+          <p className="font-body-lg text-surface-container-high/90 max-w-xl mx-auto mt-3 leading-relaxed">
+            Your support enables communities to expand educational access, construct clean water infrastructure, deliver dignified relief, and build lasting self-reliance.
           </p>
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 lg:px-8 py-20">
+      {/* Donation Form Section */}
+      <section className="max-w-4xl mx-auto px-6 lg:px-8 py-20 w-full">
         <div className="bg-surface-container-lowest rounded-3xl p-6 sm:p-10 lg:p-12 border border-outline-variant/30 shadow-level-2">
           {status === 'success' && receipt ? (
             <div className="text-center py-10 flex flex-col items-center">
@@ -86,7 +135,7 @@ export const DonatePage: React.FC = () => {
                 <span className="material-symbols-outlined text-[44px]">verified</span>
               </div>
               <span className="text-xs uppercase tracking-wider font-bold text-secondary">
-                Transaction Verified • 501(c)(3) Receipt Issued
+                Transaction Completed • Confirmation Issued
               </span>
               <h2 className="font-headline-lg text-2xl sm:text-3xl font-bold text-primary mt-2 mb-3">
                 Thank You, {firstName || 'Supporter'}!
@@ -95,16 +144,16 @@ export const DonatePage: React.FC = () => {
                 {receipt.msg}
               </p>
               <div className="p-4 rounded-xl bg-surface-container-low max-w-md w-full mb-8 text-sm text-on-surface-variant">
-                <div className="flex justify-between py-1 border-b border-outline-variant/30">
+                <div className="flex justify-between py-1.5 border-b border-outline-variant/30">
                   <span className="font-medium text-primary">Confirmation ID:</span>
                   <span className="font-mono text-xs text-secondary font-bold">{receipt.txId}</span>
                 </div>
-                <div className="flex justify-between py-1 border-b border-outline-variant/30">
-                  <span className="font-medium text-primary">Amount:</span>
+                <div className="flex justify-between py-1.5 border-b border-outline-variant/30">
+                  <span className="font-medium text-primary">Contribution:</span>
                   <span className="font-bold text-primary">${activeAmount} {frequency === 'monthly' ? '/ month' : 'one-time'}</span>
                 </div>
-                <div className="flex justify-between py-1">
-                  <span className="font-medium text-primary">Designation:</span>
+                <div className="flex justify-between py-1.5">
+                  <span className="font-medium text-primary">Programme Designation:</span>
                   <span className="font-bold text-secondary">{purpose}</span>
                 </div>
               </div>
@@ -143,59 +192,62 @@ export const DonatePage: React.FC = () => {
               {/* Purpose Selector */}
               <DonationPurposeSelector purpose={purpose} onChange={setPurpose} />
 
-              {/* Live Breakdown Summary */}
+              {/* Donor Contact Details */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div>
+                  <label htmlFor="first-name" className="block font-label-md text-label-md text-primary mb-1.5 font-bold">
+                    First Name
+                  </label>
+                  <input
+                    id="first-name"
+                    type="text"
+                    required
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="e.g. Sarah"
+                    className="w-full h-12 px-4 rounded-xl bg-surface-container-low text-primary font-body-md text-body-md focus:outline-none focus:bg-surface-container-high focus:ring-2 focus:ring-secondary/30 transition-all border border-outline-variant/30"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="last-name" className="block font-label-md text-label-md text-primary mb-1.5 font-bold">
+                    Last Name
+                  </label>
+                  <input
+                    id="last-name"
+                    type="text"
+                    required
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="e.g. Jenkins"
+                    className="w-full h-12 px-4 rounded-xl bg-surface-container-low text-primary font-body-md text-body-md focus:outline-none focus:bg-surface-container-high focus:ring-2 focus:ring-secondary/30 transition-all border border-outline-variant/30"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label htmlFor="donor-email" className="block font-label-md text-label-md text-primary mb-1.5 font-bold">
+                    Email Address (for confirmation receipt)
+                  </label>
+                  <input
+                    id="donor-email"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    className="w-full h-12 px-4 rounded-xl bg-surface-container-low text-primary font-body-md text-body-md focus:outline-none focus:bg-surface-container-high focus:ring-2 focus:ring-secondary/30 transition-all border border-outline-variant/30"
+                  />
+                </div>
+              </div>
+
+              {/* Summary Breakdown */}
               <DonationSummary
                 amount={activeAmount}
                 frequency={frequency}
                 purpose={purpose}
               />
 
-              {/* Donor Contact Fields */}
-              <div className="pt-6 border-t border-outline-variant/30">
-                <h3 className="font-headline-sm text-lg font-bold text-primary mb-4">
-                  Donor Information &amp; Tax Receipt
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label className="block text-sm font-bold text-primary mb-1">First Name *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. David"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
-                      className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-primary mb-1">Last Name *</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Miller"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                      className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-primary mb-1">Email Address for Official Receipt *</label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="david@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary"
-                  />
-                </div>
-              </div>
-
               {errorMsg && (
-                <div role="alert" className="p-3.5 rounded-xl bg-error-container/40 text-error text-sm flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[18px]">error</span>
+                <div className="p-4 rounded-xl bg-error-container text-on-error-container text-sm flex items-center gap-2" role="alert">
+                  <span className="material-symbols-outlined text-[20px]">error</span>
                   <span>{errorMsg}</span>
                 </div>
               )}
@@ -204,42 +256,33 @@ export const DonatePage: React.FC = () => {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full py-4 rounded-xl bg-secondary text-white font-label-lg font-bold shadow-md hover:bg-secondary/90 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+                className="w-full py-4 rounded-xl bg-secondary text-white font-label-lg text-label-lg font-bold hover:bg-secondary/90 shadow-md hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {status === 'loading' ? (
-                  <>
-                    <span className="w-5 h-5 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                    <span>Processing securely...</span>
-                  </>
+                  <span>Processing Contribution...</span>
                 ) : (
                   <>
-                    <span className="material-symbols-outlined text-[20px]">favorite</span>
-                    <span>
-                      COMPLETE ${activeAmount} DONATION {frequency === 'monthly' ? '/ MONTH' : ''}
-                    </span>
+                    <span className="material-symbols-outlined text-[22px]">favorite</span>
+                    <span>Complete Gift of ${activeAmount}</span>
                   </>
                 )}
               </button>
 
-              {/* Security Badges */}
-              <div className="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-on-surface-variant">
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[16px] text-secondary">lock</span>
-                  256-bit Bank-Grade Encryption
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
-                  Official 501(c)(3) Charitable Tax Deduction
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[16px] text-secondary">monitoring</span>
-                  88% Direct Field Allocation
-                </span>
-              </div>
+              <p className="text-center font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                Thank you for your partnership. All contributions support verified community-led programs in accordance with strict governance and humanitarian principles.
+              </p>
             </form>
           )}
         </div>
       </section>
+
+      {/* Donation FAQs */}
+      <FaqAccordion
+        title="Donation FAQs"
+        subtitle="Transparent answers regarding payment security, designations, and stewardship."
+        faqs={donationFaqs}
+        className="bg-surface-container-low/40 border-t border-outline-variant/30"
+      />
     </div>
   );
 };

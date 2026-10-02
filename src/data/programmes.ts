@@ -7,126 +7,126 @@ export const programmesData: Programme[] = [
     title: "Education",
     category: "Education",
     tag: "Education",
-    description: "Providing quality education, safe learning environments, and essential school supplies for a brighter future.",
-    fullDescription: "Education is the foundation of enduring empowerment. RISE International works with underserved rural and peri-urban communities to build climate-resilient solar classrooms, supply learning materials, and train educators in modernized pedagogies.",
-    mission: "To eliminate educational inequality by providing safe, well-equipped learning facilities and holistic scholastic support to vulnerable children.",
+    description: "Expanding access to quality learning environments, youth skills training, and teacher support to unlock long-term opportunity.",
+    fullDescription: "Education is a transformative foundation for enduring community change. RISE International works alongside local educators, parents, and community leaders to support safe learning environments, expand access to educational resources, and foster foundational literacy and digital skills for youth.",
+    mission: "To foster inclusive, high-quality learning opportunities that equip children and youth with the knowledge, confidence, and practical skills needed for a self-determined future.",
     whatWeDo: [
-      "Construct solar-powered primary and middle school classrooms.",
-      "Distribute textbooks, digital learning tablets, and uniform essentials.",
-      "Conduct specialized teacher training fellowships for rural educators.",
-      "Provide clean drinking water and sanitation blocks at school sites.",
-      "Offer girls' scholarship stipends to ensure gender parity in secondary education."
+      "Support community-led learning spaces and safe classroom environments",
+      "Provide essential learning materials, books, and instructional tools",
+      "Collaborate with local educators to offer professional development workshops",
+      "Facilitate foundational literacy, numeracy, and practical youth skills development",
+      "Encourage community-managed parent-teacher forums to support student continuity"
     ],
     impactPoints: [
-      "Over 45,000 children enrolled in RISE-supported community classrooms.",
-      "94% retention rate among scholarship recipients across 8 regions.",
-      "140+ certified educators completing annual pedagogy workshops."
+      "Community-centred learning spaces supported across partner regions",
+      "Strengthened learning pathways for children in under-resourced communities",
+      "Dedicated teacher support sessions focused on inclusive, modern pedagogy"
     ],
-    image: "/images/classroom-children-education.png",
-    altText: "Children in classroom interacting eagerly with their teacher",
+    image: "/images/rise-programme-card-education.webp",
+    altText: "Elementary students in uniforms sitting at wooden desks attentive to their teacher",
     icon: "school",
     colour: "#16B866",
     link: "/our-work/education",
     stats: [
-      { label: "Classrooms Built", value: "180+" },
-      { label: "Students Reached", value: "45,000+" },
-      { label: "Teachers Trained", value: "1,200+" }
+      { label: "Focus Area", value: "Primary & Youth" },
+      { label: "Implementation", value: "Community-Led" },
+      { label: "Approach", value: "Inclusive Access" }
     ]
   },
   {
     id: "community-development",
     slug: "community-development",
     title: "Community Development",
-    category: "Sustainability",
+    category: "Community Resilience",
     tag: "Sustainability",
-    description: "Building resilient communities through sustainable solar infrastructure, water wells, and agricultural resources.",
-    fullDescription: "True community transformation requires durable basic infrastructure and ecological resilience. We partner directly with indigenous village councils to construct solar-powered water stations, develop regenerative farms, and install clean mini-grids that power clinics and communal centers.",
-    mission: "To strengthen community autonomy through renewable infrastructure, clean water access, and food sovereignty.",
+    description: "Strengthening community resilience through participatory planning, sustainable clean water systems, and local infrastructure.",
+    fullDescription: "Sustainable progress begins with local ownership. Our community development initiatives focus on listening to community priorities and co-designing sustainable solutions—from clean water access to renewable solar power and agricultural resource management.",
+    mission: "To strengthen local autonomy by investing in community capacity, sustainable infrastructure, and participatory decision-making.",
     whatWeDo: [
-      "Drill deep solar-pump boreholes delivering clean potable water.",
-      "Establish drip-irrigated community cooperative vegetable gardens.",
-      "Deploy off-grid solar microgrids for communal refrigeration and evening lighting.",
-      "Train local maintenance water committees to ensure indefinite operational continuity.",
-      "Equip community elders and youth with sustainable land management practices."
+      "Collaborate with community councils to identify and plan key infrastructure needs",
+      "Support clean water initiatives and reliable water access points",
+      "Promote sustainable local resources and renewable solar energy adoption",
+      "Train local committees to ensure operational stewardship and maintenance",
+      "Foster community resilience against environmental and economic challenges"
     ],
     impactPoints: [
-      "140,000+ villagers with everyday access to safe, tested drinking water.",
-      "Zero borehole failure rate due to community technical stewardship.",
-      "35 regional farming cooperatives generating nutritional and economic yields."
+      "Locally managed water and sanitation infrastructure established with community committees",
+      "Participatory planning processes that place decision-making in the hands of residents",
+      "Ongoing capacity training to support long-term infrastructure maintenance"
     ],
-    image: "/images/community-woman-harvest.png",
-    altText: "Smiling woman agricultural leader holding a basket of fresh organic produce near solar irrigation",
+    image: "/images/rise-programme-card-community-dev.webp",
+    altText: "Engineers and community workers installing reliable solar water pumping equipment",
     icon: "solar_power",
     colour: "#006d39",
     link: "/our-work/community-development",
     stats: [
-      { label: "Water Wells Active", value: "120+" },
-      { label: "Community Gardens", value: "48" },
-      { label: "Clean Liters Pumped/Day", value: "650,000L" }
+      { label: "Approach", value: "Grassroots" },
+      { label: "Ownership", value: "100% Local" },
+      { label: "Focus", value: "Sustainability" }
     ]
   },
   {
     id: "humanitarian-aid",
     slug: "humanitarian-aid",
     title: "Humanitarian Aid",
-    category: "Emergency Care",
-    tag: "Emergency Care",
-    description: "Delivering rapid emergency relief, medical aid stations, and critical nutrition kits to families affected by crises.",
-    fullDescription: "When disasters strike or protracted conflicts displace vulnerable families, immediate and dignified relief is imperative. RISE International's rapid response teams coordinate mobile medical units, maternal nutrition programs, and clean sanitation corridors in hard-to-reach crisis sectors.",
-    mission: "To protect human dignity and preserve life by delivering agile, transparent emergency health and relief services during times of humanitarian catastrophe.",
+    category: "Emergency Relief",
+    tag: "Humanitarian Response",
+    description: "Delivering dignified emergency assistance, vital health supplies, and coordinated relief alongside community responders.",
+    fullDescription: "When crises and natural hardships occur, timely and respectful assistance preserves dignity and protects lives. RISE International provides emergency aid grounded in humanitarian principles, ensuring that relief efforts prioritize the vulnerable while laying foundations for steady recovery.",
+    mission: "To provide prompt, compassionate, and dignified humanitarian relief that addresses immediate survival needs while fostering long-term recovery.",
     whatWeDo: [
-      "Deploy mobile health clinics with solar-refrigerated vaccine transport.",
-      "Provide therapeutic infant nutritional supplements to avert acute malnutrition.",
-      "Distribute emergency shelter, clean water purification kits, and hygiene parcels.",
-      "Provide primary trauma care and maternal health monitoring in remote field stations.",
-      "Liaise with international logistics corridors for swift supply clearance."
+      "Coordinate with local emergency networks to deliver essential food and household supplies",
+      "Facilitate emergency water purification and essential health hygiene kits",
+      "Support primary community healthcare outreach and medical wellness checks",
+      "Provide dignified shelter support for families experiencing acute hardship",
+      "Bridge emergency interventions into community-led recovery and rehabilitation"
     ],
     impactPoints: [
-      "Over 90,000 patients treated through roving and stationary field clinics.",
-      "Under-5 acute malnutrition mortality reduced by 62% in targeted emergency camps.",
-      "Average deployment turnaround of under 48 hours following severe disaster events."
+      "Timely, dignified emergency assistance provided during community crises",
+      "Community healthcare outreach focused on maternal and child health support",
+      "Close coordination with frontline local responders to minimize duplication"
     ],
-    image: "/images/humanitarian-medical-clinic.png",
-    altText: "Female humanitarian medic using stethoscope to examine a healthy infant in field clinic",
+    image: "/images/rise-programme-card-humanitarian-aid.webp",
+    altText: "Healthcare worker providing respectful medical consultation at a community clinic",
     icon: "health_and_safety",
     colour: "#0B2145",
     link: "/our-work/humanitarian-aid",
     stats: [
-      { label: "Emergency Consultations", value: "90,000+" },
-      { label: "Relief Kits Delivered", value: "32,000+" },
-      { label: "Mobile Clinics Active", value: "18" }
+      { label: "Response", value: "Needs-Based" },
+      { label: "Principle", value: "Human Dignity" },
+      { label: "Coordination", value: "Local Partners" }
     ]
   },
   {
     id: "economic-empowerment",
     slug: "economic-empowerment",
     title: "Economic Empowerment",
-    category: "Microfinance",
-    tag: "Microfinance",
-    description: "Creating pathways to long-term financial self-reliance through vocational mentorship, micro-grants, and cooperative markets.",
-    fullDescription: "Charity alone cannot eliminate systemic poverty; sustainable financial independence can. RISE International invests in rural entrepreneurs, women's artisan collectives, and smallholder agro-enterprises through revolving micro-grants, financial literacy curriculums, and direct market access.",
-    mission: "To unlock generational economic resilience by equipping grassroots entrepreneurs and cooperatives with capital, skills, and market channels.",
+    category: "Livelihood & Skills",
+    tag: "Livelihoods",
+    description: "Equipping individuals and cooperatives with practical vocational skills, mentorship, and opportunities for sustainable financial independence.",
+    fullDescription: "Economic independence is central to breaking cycles of poverty. We support vocational training programs, women's artisan collectives, and smallholder initiatives, helping individuals develop resilient livelihoods and participate fully in local economic life.",
+    mission: "To unlock sustainable income opportunities by equipping community entrepreneurs and cooperatives with practical training, tools, and mentorship.",
     whatWeDo: [
-      "Provide zero-interest revolving seed capital to vetted women's cooperatives.",
-      "Deliver certified bookkeeping, digital financial literacy, and marketing workshops.",
-      "Facilitate collective purchase of agro-processing equipment like grain mills and oil presses.",
-      "Connect regional craftspeople with fair-trade export aggregators.",
-      "Mentor emerging youth apprentices in green technologies and technical trades."
+      "Facilitate vocational training and skills workshops in viable local trades",
+      "Support grassroots artisan and agricultural cooperatives with tools and workspace",
+      "Provide practical mentorship in basic financial literacy, budgeting, and planning",
+      "Help local producers access broader community markets and fair exchange opportunities",
+      "Encourage youth entrepreneurship through hands-on technical apprenticeships"
     ],
     impactPoints: [
-      "3,200+ micro-enterprises launched and flourishing with a 96% repayment return.",
-      "Household incomes increased by an average of 180% within 18 months of cooperative entry.",
-      "Over 8,500 family dependents supported through sustainable household earnings."
+      "Vocational training programs equipping participants with marketable craft and trade skills",
+      "Strengthened women-led cooperative enterprises fostering household financial stability",
+      "Youth apprenticeship initiatives creating clear pathways into skilled employment"
     ],
-    image: "/images/community-woman-harvest.png",
-    altText: "A cooperative of enterprising African artisans and small business owners discussing finance ledger",
+    image: "/images/rise-programme-card-economic-empowerment.webp",
+    altText: "Tailoring trainee measuring fabric on a worktable in a vocational training studio",
     icon: "monetization_on",
     colour: "#1479E8",
     link: "/our-work/economic-empowerment",
     stats: [
-      { label: "Businesses Funded", value: "3,200+" },
-      { label: "Repayment Rate", value: "96.4%" },
-      { label: "Women Beneficiaries", value: "82%" }
+      { label: "Focus", value: "Vocational Skills" },
+      { label: "Participation", value: "Inclusive" },
+      { label: "Outcome", value: "Self-Reliance" }
     ]
   }
 ];

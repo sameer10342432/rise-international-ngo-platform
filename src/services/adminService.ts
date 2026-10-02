@@ -468,4 +468,61 @@ export const adminService = {
     });
     return res.data;
   },
+
+  // AI Assistant APIs (Strictly Protected Admin-Only)
+  async generateAiContent(payload: { pageType: string; pageTitle: string; context?: string; currentContent?: string }): Promise<any> {
+    const res = await adminFetch<{ success: boolean; data: any }>('/admin/ai/content', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    return res.data;
+  },
+
+  async generateAiSeo(payload: { pageTitle: string; pageContent?: string; targetTopic?: string; pageType?: string }): Promise<any> {
+    const res = await adminFetch<{ success: boolean; data: any }>('/admin/ai/seo', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    return res.data;
+  },
+
+  async generateAiArticle(payload: { topic: string; category: string; targetAudience?: string; keyPoints?: string[] }): Promise<any> {
+    const res = await adminFetch<{ success: boolean; data: any }>('/admin/ai/article', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    return res.data;
+  },
+
+  async generateAiProgramme(payload: { programmeName: string; focusArea: string; communityContext?: string }): Promise<any> {
+    const res = await adminFetch<{ success: boolean; data: any }>('/admin/ai/programme', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    return res.data;
+  },
+
+  async generateAiFaq(payload: { topic: string; pageType?: string; count?: number }): Promise<any> {
+    const res = await adminFetch<{ success: boolean; data: any }>('/admin/ai/faq', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    return res.data;
+  },
+
+  async generateAiImagePrompt(payload: { pageTitle: string; topic: string; aspectRatio?: string }): Promise<any> {
+    const res = await adminFetch<{ success: boolean; data: any }>('/admin/ai/image-prompt', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    return res.data;
+  },
+
+  async generateAiImage(payload: { prompt: string; aspectRatio?: string }): Promise<any> {
+    const res = await adminFetch<{ success: boolean; data: any }>('/admin/ai/generate-image', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    return res.data;
+  },
 };

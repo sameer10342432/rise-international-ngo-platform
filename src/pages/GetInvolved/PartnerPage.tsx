@@ -1,14 +1,42 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { SEO } from '../../components/common/SEO';
+import { Breadcrumbs } from '../../components/common/Breadcrumbs';
 import { contactService } from '../../services/contactService';
+
+const partnershipAreas = [
+  {
+    title: "Corporate Partnerships",
+    description: "Align your organisation's social impact goals with community priorities through workplace giving, matching gifts, and ethical corporate engagement.",
+    icon: "corporate_fare",
+  },
+  {
+    title: "Community Organisations",
+    description: "Collaborate on locally led initiatives where grassroots associations and community councils take direct ownership of project stewardship.",
+    icon: "groups",
+  },
+  {
+    title: "Programme Partnerships",
+    description: "Join forces on thematic initiatives in education, community water infrastructure, humanitarian response, or vocational livelihoods.",
+    icon: "school",
+  },
+  {
+    title: "Skills-Based Support",
+    description: "Lend professional technical expertise—including civil engineering, public health guidance, digital technology, or legal counsel.",
+    icon: "handshake",
+  },
+  {
+    title: "Fundraising Partnerships",
+    description: "Mobilize institutional foundations, civic groups, and philanthropic coalitions to support scalable community initiatives.",
+    icon: "volunteer_activism",
+  },
+];
 
 export const PartnerPage: React.FC = () => {
   const [formData, setFormData] = useState({
     orgName: '',
     contactName: '',
     email: '',
-    partnershipType: 'Corporate CSR & Matching',
+    partnershipType: 'Corporate Partnerships',
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -20,7 +48,7 @@ export const PartnerPage: React.FC = () => {
       await contactService.submitMessage({
         fullName: `${formData.contactName} (${formData.orgName})`,
         email: formData.email,
-        subject: `Partnership: ${formData.partnershipType}`,
+        subject: `Partnership Inquiry: ${formData.partnershipType}`,
         message: formData.message,
       });
       setStatus('success');
@@ -30,112 +58,211 @@ export const PartnerPage: React.FC = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col">
       <SEO
-        title="Partner With Us | Institutional &amp; Corporate CSR | RISE International"
-        description="Collaborate with RISE International through corporate matching grants, philanthropic foundations, and multilateral aid coalitions."
+        title="Partner With Us | Collaborative Partnerships | RISE International"
+        description="Partner with RISE International. Explore partnership opportunities across corporate collaborations, community organisations, programme partnerships, and skills-based support."
+        canonical="https://riseintl.org/get-involved/partner"
+        ogImage="/images/rise-partner-hero-institutional.webp"
+        breadcrumbs={[
+          { name: "Home", item: "https://riseintl.org/" },
+          { name: "Get Involved", item: "https://riseintl.org/get-involved" },
+          { name: "Partner With Us", item: "https://riseintl.org/get-involved/partner" },
+        ]}
       />
 
-      <section className="bg-primary-container text-white py-16 lg:py-20 text-center">
-        <div className="max-w-content mx-auto px-6 lg:px-12">
-          <Link to="/get-involved" className="inline-flex items-center gap-1.5 text-secondary-fixed font-label-md text-sm mb-3 hover:underline">
-            <span className="material-symbols-outlined text-[16px]">arrow_back</span>
-            <span>Get Involved</span>
-          </Link>
-          <h1 className="font-display-hero text-4xl sm:text-5xl font-extrabold text-white">
+      {/* Hero Banner */}
+      <section className="bg-primary-container text-white py-16 lg:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/rise-partner-hero-institutional.webp"
+            alt="Representatives of an international partner institution shaking hands with local community elders under a solar project canopy"
+            className="w-full h-full object-cover object-center opacity-25"
+            loading="eager"
+            width={1344}
+            height={768}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/90 to-primary-container/60" />
+        </div>
+
+        <div className="relative z-10 max-w-content mx-auto px-6 lg:px-12 text-center">
+          <div className="mb-4">
+            <Breadcrumbs
+              items={[
+                { label: "Get Involved", path: "/get-involved" },
+                { label: "Partner With Us" },
+              ]}
+              className="text-white/80 justify-center"
+            />
+          </div>
+          <span className="font-label-sm text-secondary-fixed uppercase tracking-wider font-bold">
+            COLLABORATIVE IMPACT
+          </span>
+          <h1 className="font-display-hero text-4xl sm:text-5xl font-extrabold mt-2">
             Partner With RISE International
           </h1>
-          <p className="font-body-lg text-surface-container-high/90 max-w-xl mx-auto mt-3">
-            Amplify your institutional philanthropy with our verified ground logistics and 88%+ program efficiency.
+          <p className="font-body-lg text-surface-container-high/90 max-w-xl mx-auto mt-3 leading-relaxed">
+            We partner with organisations that share our commitment to human dignity, community stewardship, and lasting, self-governed development.
           </p>
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-20">
-        <div className="p-8 sm:p-12 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 shadow-level-2">
-          {status === 'success' ? (
-            <div className="text-center py-8">
-              <span className="material-symbols-outlined text-[48px] text-secondary">handshake</span>
-              <h3 className="font-headline-md text-2xl font-bold text-primary mt-3">Partnership Proposal Received</h3>
-              <p className="text-on-surface-variant max-w-md mx-auto mt-2">
-                Thank you for your interest in partnering with RISE International. Our Institutional Alliances team will review your organization's inquiry and connect with you within 48 hours.
+      {/* Partnership Opportunities Overview */}
+      <section className="max-w-content mx-auto px-6 lg:px-12 py-20">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="font-label-sm text-secondary uppercase tracking-wider font-bold">
+            OPPORTUNITY AREAS
+          </span>
+          <h2 className="font-headline-xl text-3xl sm:text-4xl text-primary font-bold mt-2">
+            Ways We Can Work Together
+          </h2>
+          <p className="font-body-md text-on-surface-variant mt-3 leading-relaxed">
+            We do not engage in superficial sponsorships. Our partnerships are structured around genuine community needs and transparent, verifiable collaboration.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {partnershipAreas.map((area, idx) => (
+            <div
+              key={idx}
+              className="p-8 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-level-1 flex flex-col"
+            >
+              <div className="w-12 h-12 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center mb-6">
+                <span className="material-symbols-outlined text-[26px]">{area.icon}</span>
+              </div>
+              <h3 className="font-headline-sm text-xl font-bold text-primary mb-2">
+                {area.title}
+              </h3>
+              <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">
+                {area.description}
               </p>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          ))}
+        </div>
+      </section>
+
+      {/* Partnership Inquiry Form */}
+      <section className="w-full bg-surface-container-low py-20 border-y border-outline-variant/30">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="bg-surface-container-lowest rounded-3xl p-6 sm:p-10 lg:p-12 border border-outline-variant/30 shadow-level-2">
+            <div className="mb-8 text-center">
+              <span className="font-label-sm text-secondary uppercase tracking-wider font-bold">
+                INITIATE A DIALOGUE
+              </span>
+              <h2 className="font-headline-lg text-2xl sm:text-3xl font-bold text-primary mt-1">
+                Partnership Inquiry
+              </h2>
+              <p className="font-body-md text-on-surface-variant mt-2">
+                Tell us about your organisation and how you envision collaborating with RISE International.
+              </p>
+            </div>
+
+            {status === 'success' ? (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 rounded-full bg-secondary/15 text-secondary flex items-center justify-center mx-auto mb-4">
+                  <span className="material-symbols-outlined text-[36px]">verified</span>
+                </div>
+                <h3 className="font-headline-md text-2xl font-bold text-primary mb-2">
+                  Inquiry Received
+                </h3>
+                <p className="text-on-surface-variant max-w-md mx-auto leading-relaxed">
+                  Thank you for reaching out. Our partnerships team will review your proposal and respond promptly to discuss potential alignment.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="partner-org" className="block text-sm font-bold text-primary mb-1.5">
+                      Organisation Name *
+                    </label>
+                    <input
+                      id="partner-org"
+                      type="text"
+                      required
+                      placeholder="e.g. Community Foundation"
+                      value={formData.orgName}
+                      onChange={(e) => setFormData({ ...formData, orgName: e.target.value })}
+                      className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary font-body-md focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="partner-contact" className="block text-sm font-bold text-primary mb-1.5">
+                      Contact Representative *
+                    </label>
+                    <input
+                      id="partner-contact"
+                      type="text"
+                      required
+                      placeholder="e.g. David Weber"
+                      value={formData.contactName}
+                      onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
+                      className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary font-body-md focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="partner-email" className="block text-sm font-bold text-primary mb-1.5">
+                      Email Address *
+                    </label>
+                    <input
+                      id="partner-email"
+                      type="email"
+                      required
+                      placeholder="contact@organisation.org"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary font-body-md focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="partner-type" className="block text-sm font-bold text-primary mb-1.5">
+                      Partnership Area *
+                    </label>
+                    <select
+                      id="partner-type"
+                      value={formData.partnershipType}
+                      onChange={(e) => setFormData({ ...formData, partnershipType: e.target.value })}
+                      className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary font-body-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                    >
+                      <option>Corporate Partnerships</option>
+                      <option>Community Organisations</option>
+                      <option>Programme Partnerships</option>
+                      <option>Skills-Based Support</option>
+                      <option>Fundraising Partnerships</option>
+                    </select>
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block text-sm font-bold text-primary mb-1">Organization Name *</label>
-                  <input
-                    type="text"
+                  <label htmlFor="partner-message" className="block text-sm font-bold text-primary mb-1.5">
+                    Collaboration Objectives &amp; Scope *
+                  </label>
+                  <textarea
+                    id="partner-message"
+                    rows={4}
                     required
-                    placeholder="e.g. Acme Global Foundation"
-                    value={formData.orgName}
-                    onChange={(e) => setFormData({ ...formData, orgName: e.target.value })}
-                    className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary"
+                    placeholder="Describe your organisation, thematic interest, and how you envision collaborating with RISE International..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full p-4 rounded-xl bg-surface border border-outline-variant/30 text-primary font-body-md focus:outline-none focus:ring-2 focus:ring-secondary/30"
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-bold text-primary mb-1">Contact Representative *</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Michael Chen"
-                    value={formData.contactName}
-                    onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                    className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary"
-                  />
-                </div>
-              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-bold text-primary mb-1">Corporate / Institutional Email *</label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="michael@acme.org"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-primary mb-1">Partnership Format</label>
-                  <select
-                    value={formData.partnershipType}
-                    onChange={(e) => setFormData({ ...formData, partnershipType: e.target.value })}
-                    className="w-full h-12 px-4 rounded-xl bg-surface border border-outline-variant/30 text-primary cursor-pointer"
-                  >
-                    <option>Corporate CSR &amp; Matching</option>
-                    <option>Institutional Philanthropic Grant</option>
-                    <option>University / Technical Research Coalition</option>
-                    <option>In-Kind Logistics &amp; Technology Supply</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-bold text-primary mb-1">Scope &amp; Objectives *</label>
-                <textarea
-                  rows={4}
-                  required
-                  placeholder="Outline your organization's geographic priorities, budget scale, or desired thematic pillars..."
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full p-4 rounded-xl bg-surface border border-outline-variant/30 text-primary"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === 'loading'}
-                className="w-full py-4 rounded-xl bg-primary text-white font-label-lg font-bold shadow-md hover:bg-primary/90 transition-all flex items-center justify-center gap-2"
-              >
-                {status === 'loading' ? 'SUBMITTING INQUIRY...' : 'SUBMIT PARTNERSHIP INQUIRY'}
-              </button>
-            </form>
-          )}
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="w-full py-4 rounded-xl bg-primary text-white font-label-lg font-bold shadow-md hover:bg-primary/90 transition-all flex items-center justify-center gap-2"
+                >
+                  {status === 'loading' ? 'Submitting Proposal...' : 'Submit Partnership Inquiry'}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </section>
     </div>

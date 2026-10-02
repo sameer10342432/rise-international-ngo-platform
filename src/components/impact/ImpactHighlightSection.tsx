@@ -5,8 +5,21 @@ import { ImpactStat } from './ImpactStat';
 export const ImpactHighlightSection: React.FC = () => {
   return (
     <section className="w-full bg-primary-container text-on-primary py-20 relative overflow-hidden">
+      {/* Background Visual Layer */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/rise-home-impact-progress.webp"
+          alt="Community members celebrating the activation of a solar-powered water filtration pump"
+          className="w-full h-full object-cover opacity-20"
+          loading="lazy"
+          width={1344}
+          height={768}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/90 to-primary-container/75" />
+      </div>
+
       {/* Subtle geometric background vector */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
+      <div className="absolute inset-0 opacity-10 pointer-events-none z-0" aria-hidden="true">
         <svg className="w-full h-full" fill="none" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg">
           <circle cx="200" cy="300" r="280" stroke="currentColor" strokeDasharray="8 8" strokeWidth="1.5" />
           <circle cx="1200" cy="150" r="350" stroke="currentColor" strokeWidth="2" />

@@ -8,6 +8,8 @@ import {
   adminService,
 } from '../../services/adminService';
 
+import { SEO } from '../common/SEO';
+
 interface AdminLayoutProps {
   children: React.ReactNode;
 }
@@ -94,6 +96,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-slate-100 flex flex-col font-sans">
+      <SEO title="Admin CMS Portal | RISE International" noindex={true} />
       {/* Top Bar */}
       <header className="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-40">
         <div className="px-4 sm:px-6 h-16 flex items-center justify-between">

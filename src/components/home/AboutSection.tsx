@@ -9,10 +9,12 @@ export const AboutSection: React.FC = () => {
         <div className="lg:col-span-6 relative">
           <div className="relative rounded-3xl overflow-hidden shadow-level-3">
             <img
-              src="/images/community-woman-harvest.png"
-              alt="Local agricultural pioneer showcasing healthy seasonal crop yield"
+              src="/images/rise-home-about-dialogue.webp"
+              alt="Local community leaders and facilitators sitting together in an open courtyard in dialogue about sustainable agriculture and community progress"
               className="w-full h-[450px] sm:h-[520px] object-cover"
               loading="lazy"
+              width={1024}
+              height={768}
             />
           </div>
           {/* Overlapping floating story badge */}

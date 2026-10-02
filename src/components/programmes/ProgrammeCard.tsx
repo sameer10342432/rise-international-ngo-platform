@@ -15,6 +15,8 @@ export const ProgrammeCard: React.FC<ProgrammeCardProps> = ({ programme }) => {
           alt={programme.altText}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
+          width={1024}
+          height={768}
         />
         <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-sm">
           {programme.tag}

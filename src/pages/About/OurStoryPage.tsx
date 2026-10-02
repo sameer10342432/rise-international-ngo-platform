@@ -33,11 +33,14 @@ export const OurStoryPage: React.FC = () => {
           <p>
             In the early 2010s, our founding team observed countless non-profit projects that fell silent shortly after ribbon-cutting ceremonies: boreholes with broken mechanical seals, empty solar clinics lacking technicians, and schools without curricula.
           </p>
-          <div className="my-8 rounded-2xl overflow-hidden shadow-level-2">
+          <div className="my-8 rounded-2xl overflow-hidden shadow-level-2 border border-outline-variant/30">
             <img
-              src="/images/classroom-children-education.png"
-              alt="Community classroom learning"
+              src="/images/rise-about-story-grassroots.webp"
+              alt="Grassroots community assembly in an open-air village pavilion with local elders and youth discussing priorities"
               className="w-full h-80 object-cover"
+              loading="lazy"
+              width={1024}
+              height={768}
             />
           </div>
           <h2 className="font-headline-md text-2xl text-primary font-bold mt-8">

@@ -1,58 +1,68 @@
 import { NewsArticle } from '../types';
 
+/**
+ * Editorial Dispatches & News
+ * Formatted according to Rule 18:
+ * H1, Featured image, Category, Published date, Introduction, Main content, Related stories, CTA, SEO metadata.
+ * Clearly marked as DRAFT / DEMO content to prevent fabrication of unverified historical events.
+ */
 export const newsArticlesData: NewsArticle[] = [
   {
-    id: "clean-water-expansion-12-villages",
-    slug: "clean-water-expansion-12-villages",
-    title: "RISE Expands Clean Water Infrastructure to 12 Additional Villages",
-    excerpt: "Through solar-powered deep boreholes, an additional 18,000 residents gain direct access to potable drinking water.",
+    id: "strengthening-community-learning-initiatives",
+    slug: "strengthening-community-learning-initiatives",
+    title: "[Draft Demo] Strengthening Community Learning Spaces Through Shared Partnerships",
+    excerpt: "Exploring collaborative approaches between local educators, community councils, and resource partners to support youth learning access.",
     content: [
-      "RISE International is pleased to announce the commissioning of twelve new solar-powered deep borehole water stations across rural districts in Eastern and Sub-Saharan communities. This milestone ensures that more than 18,000 community members now have daily access to lab-certified potable water within 200 meters of their homes.",
-      "Historically, young girls and women spent up to four hours daily walking to seasonal riverbeds, exposing themselves to waterborne diseases and physical safety vulnerabilities. With the opening of these solar water points, daily water collection time has dropped to less than ten minutes.",
-      "Each borehole features a 4.5-kilowatt solar array with high-yield submersible pumps, elevated 10,000-liter storage tanks, and automated chlorination filtration. Furthermore, local water governance committees consisting of 60% women leaders have received certified maintenance training to safeguard water infrastructure independence.",
-      "“Safe water is the prerequisite for all human development—health, school attendance, and food security,” noted RISE Water Infrastructure Director. “We remain steadfast in our mission to reach 50 additional communities by next year.”"
-    ],
-    category: "Field Dispatch",
-    image: "/images/community-woman-harvest.png",
-    altText: "Clean water and solar irrigation in rural community",
-    publishedAt: "June 02, 2024",
-    author: "Infrastructure Operations",
-    readTime: "4 min read"
-  },
-  {
-    id: "teacher-training-fellowship-140-educators",
-    slug: "teacher-training-fellowship-140-educators",
-    title: "Annual Teacher Training Fellowship Welcomes 140 Regional Educators",
-    excerpt: "Providing modern pedagogical tools, digital tablets, and certified STEM curriculum training to rural primary teachers.",
-    content: [
-      "Last week, the 2024 RISE Teacher Fellowship kicked off its intensive four-week summer residency program, welcoming 140 primary and middle school teachers from thirty rural districts.",
-      "Supported by educational philanthropists and academic partners, the fellowship equips educators with innovative, student-centered teaching methodologies, trauma-informed classroom strategies, and practical STEM experiment toolkits designed for low-resource environments.",
-      "Each teacher fellow receives an offline-enabled digital tablet loaded with open-source science curricula, encyclopedic reference texts, and multimedia lesson plans that operate without regular internet connectivity.",
-      "“When you empower a single teacher, you ignite the potential of thousands of students over decades,” said Dr. Claire Bennett, RISE Global Education Coordinator. “Our fellows return to their home communities as pedagogical mentors and community leaders.”"
+      "Introduction: Access to reliable, supportive learning spaces is essential for youth development and community resilience. This draft dispatch outlines how RISE International collaborates with local school committees to address educational priorities.",
+      "Main Content: Quality education depends not only on physical classrooms, but on the ongoing support provided to local teachers and families. By listening to community priorities, initiatives are tailored to supply foundational materials, repair existing structures, and create welcoming learning environments.",
+      "Local Participation & Stewardship: Projects succeed best when community elders and parent committees take direct leadership. From maintaining solar classroom lighting to organizing study groups, community stewardship ensures long-term educational continuity.",
+      "Looking Ahead: Sustainable change is built step-by-step through consistent, dignified collaboration with frontline educators.",
+      "Notice: This article is demonstration draft content prepared for editorial review."
     ],
     category: "Education",
-    image: "/images/classroom-children-education.png",
-    altText: "Fellowship educators and students learning together",
-    publishedAt: "May 21, 2024",
-    author: "Education Initiative",
-    readTime: "3 min read"
+    image: "/images/rise-news-learning-hub-launch.webp",
+    altText: "Community members gathering in computer room of newly opened educational learning centre",
+    publishedAt: "2026-10-02",
+    author: "Editorial Team",
+    readTime: "4 min read",
+    isDraftDemo: true,
   },
   {
-    id: "2023-fiscal-stewardship-humanitarian-audits",
-    slug: "2023-fiscal-stewardship-humanitarian-audits",
-    title: "2023 Fiscal Stewardship & Humanitarian Audits Released",
-    excerpt: "Our clean audit reaffirmation proves that 88% of every dollar continues to fund verified on-the-ground interventions.",
+    id: "sustainable-clean-water-approaches",
+    slug: "sustainable-clean-water-approaches",
+    title: "[Draft Demo] Sustainable Community Water Systems: Principles of Local Ownership",
+    excerpt: "Why participatory planning and community maintenance committees are central to enduring clean water infrastructure.",
     content: [
-      "RISE International has formally published its 2023 Independent Auditor's Report, conducted by leading multinational accounting auditors. We are proud to affirm that the organisation has once again received an unqualified clean opinion, affirming our unwavering standard of fiscal integrity.",
-      "In 2023, 88.2% of all financial donations and institutional grants directly supported on-the-ground program services in education, clean water, medical aid, and agricultural cooperatives. Administrative costs represented 7.1%, while fundraising reinvestment accounted for 4.7%—far outperforming global charity watchdog efficiency benchmarks.",
-      "“We regard every donation as a solemn sacred trust from our global partners and community supporters,” stated the Board Chairman. “Our open ledger policy ensures that every contributor can trace their dollar straight to boreholes, school desks, and life-saving clinic supplies.”",
-      "The complete 48-page financial statement, along with detailed regional program ledgers and impact verifications, is accessible for public review and download in our annual impact report portal."
+      "Introduction: Clean, dependable water access is a cornerstone of public health, education, and economic stability in rural communities.",
+      "Main Content: Traditional infrastructure projects often falter when maintenance knowledge is not embedded locally. RISE International's community development model emphasizes training local technicians and establishing accountable water committees prior to infrastructure completion.",
+      "Sustainable Technology: Integrating solar-powered pumping systems reduces operational overhead and provides reliable water points that communities can independently operate.",
+      "Notice: This article is demonstration draft content prepared for editorial review."
     ],
-    category: "Impact Report",
-    image: "/images/humanitarian-medical-clinic.png",
-    altText: "Medical and humanitarian supplies audited and delivered to field stations",
-    publishedAt: "April 15, 2024",
-    author: "Governance & Audit Committee",
-    readTime: "5 min read"
-  }
+    category: "Community Development",
+    image: "/images/rise-news-solar-water-expansion.webp",
+    altText: "Solar panel clean energy installation powering community water borehole station",
+    publishedAt: "2026-10-02",
+    author: "Infrastructure Team",
+    readTime: "3 min read",
+    isDraftDemo: true,
+  },
+  {
+    id: "principles-of-dignified-humanitarian-response",
+    slug: "principles-of-dignified-humanitarian-response",
+    title: "[Draft Demo] Principles of Dignified Humanitarian Aid and Community Recovery",
+    excerpt: "How needs-based assistance and community coordination preserve dignity during acute hardship and disaster recovery.",
+    content: [
+      "Introduction: Humanitarian response must preserve individual dignity and foster local agency at every stage of relief.",
+      "Main Content: In moments of acute emergency, rapid response must be closely coordinated with frontline local responders. Providing essential nutrition, clean water, and primary healthcare support with compassion ensures that vulnerable households receive timely assistance.",
+      "From Relief to Recovery: Emergency aid must always anticipate the recovery phase, supporting local markets and community structures so that recovery belongs to the community.",
+      "Notice: This article is demonstration draft content prepared for editorial review."
+    ],
+    category: "Humanitarian Aid",
+    image: "/images/rise-news-annual-audit-transparency.webp",
+    altText: "Analytical stewardship charts and evaluation metrics displayed on tablet device",
+    publishedAt: "2026-10-02",
+    author: "Humanitarian Team",
+    readTime: "4 min read",
+    isDraftDemo: true,
+  },
 ];

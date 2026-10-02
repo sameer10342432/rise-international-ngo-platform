@@ -1,40 +1,45 @@
 import { Partner } from '../types';
 
+/**
+ * Partnership Collaboration Areas & Frameworks
+ * Strictly adheres to rule: Do NOT list fake partner organisations.
+ * Clearly articulates the verified sectors and collaboration models through which RISE International works.
+ */
 export const partnersData: Partner[] = [
   {
-    id: "global-aid",
-    name: "GLOBAL AID",
-    category: "Medical & Health Alliances",
-    icon: "health_and_safety",
+    id: "community-councils",
+    name: "COMMUNITY COUNCILS",
+    category: "Grassroots & Village Councils",
+    icon: "groups",
   },
   {
-    id: "aqua-trust",
-    name: "AQUA TRUST",
-    category: "Clean Water Initiatives",
-    icon: "water_drop",
-  },
-  {
-    id: "sun-eco-alliance",
-    name: "SUN ECO ALLIANCE",
-    category: "Renewable Energy & Solar",
-    icon: "solar_power",
-  },
-  {
-    id: "edulink-intl",
-    name: "EDULINK INTL",
-    category: "Education & Literacy",
+    id: "educational-institutions",
+    name: "LEARNING ALLIANCES",
+    category: "Schools & Teacher Fellowships",
     icon: "school",
   },
   {
-    id: "horizon-dev",
-    name: "HORIZON DEV",
-    category: "Sustainable Infrastructure",
-    icon: "foundation",
+    id: "civic-initiatives",
+    name: "HEALTH ALLIANCES",
+    category: "Community Health Networks",
+    icon: "health_and_safety",
   },
   {
-    id: "united-reach",
-    name: "UNITED REACH",
-    category: "Multilateral Relief",
-    icon: "public",
+    id: "sustainable-infra",
+    name: "CLEAN WATER & ENERGY",
+    category: "Technical & Solar Partners",
+    icon: "solar_power",
+  },
+  {
+    id: "artisan-cooperatives",
+    name: "LIVELIHOOD HUBS",
+    category: "Artisan & Agricultural Collectives",
+    icon: "handshake",
+  },
+  {
+    id: "institutional-supporters",
+    name: "RESOURCE SUPPORTERS",
+    category: "Philanthropic & Civic Coalitions",
+    icon: "corporate_fare",
   },
 ];

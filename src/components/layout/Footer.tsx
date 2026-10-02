@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
             </p>
 
             <p className="font-body-sm text-body-sm text-on-surface-variant max-w-sm leading-relaxed">
-              {organizationInfo.registration}
+              {organizationInfo.supportingCopy}
             </p>
 
             {/* Social Links */}

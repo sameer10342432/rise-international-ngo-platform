@@ -14,11 +14,23 @@ export const NewsDetailPage: React.FC = () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-slate-50 min-h-screen">
       <SEO
         title={`${article.title} | RISE International`}
         description={article.excerpt}
+        canonical={`/news/${article.slug}`}
         ogImage={article.image}
+        ogType="article"
+        article={{
+          publishedTime: article.publishedAt,
+          author: article.author,
+          section: article.category,
+        }}
+        breadcrumbs={[
+          { name: 'Home', item: '/' },
+          { name: 'News', item: '/news' },
+          { name: article.title, item: `/news/${article.slug}` },
+        ]}
       />
       <ArticleLayout article={article} />
     </div>

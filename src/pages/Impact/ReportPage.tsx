@@ -1,104 +1,128 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../../components/common/SEO';
+import { Breadcrumbs } from '../../components/common/Breadcrumbs';
 
 export const ReportPage: React.FC = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-slate-50 min-h-screen">
       <SEO
-        title="Annual Impact Report &amp; Audits | RISE International"
-        description="Review RISE International's independent financial audits, program efficiency allocations, and annual governance metrics."
+        title="Financial Stewardship & Accountability Reports | RISE International"
+        description="Learn about RISE International's principles of transparent governance, resource allocation, and accountability reporting."
+        canonical="/impact/report"
+        ogImage="/images/rise-impact-governance-audit.webp"
+        breadcrumbs={[
+          { name: 'Home', item: '/' },
+          { name: 'Impact', item: '/impact' },
+          { name: 'Accountability & Reports', item: '/impact/report' },
+        ]}
       />
 
-      <section className="bg-primary-container text-white py-16 lg:py-20 text-center">
-        <div className="max-w-content mx-auto px-6 lg:px-12">
-          <Link to="/impact" className="inline-flex items-center gap-1.5 text-secondary-fixed font-label-md text-sm mb-3 hover:underline">
-            <span className="material-symbols-outlined text-[16px]">arrow_back</span>
-            <span>Impact Overview</span>
-          </Link>
-          <h1 className="font-display-hero text-4xl sm:text-5xl font-extrabold text-white">
-            Annual Impact Report &amp; Audits
-          </h1>
-          <p className="font-body-lg text-surface-container-high/90 max-w-xl mx-auto mt-3">
-            Independent evaluations, financial statements, and verified operational efficacy.
-          </p>
+      <section className="bg-primary text-white py-16 lg:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/rise-impact-governance-audit.webp"
+            alt="Financial audit and governance review meeting between RISE international stewards and community oversight council"
+            className="w-full h-full object-cover opacity-25"
+            loading="eager"
+            width={1344}
+            height={768}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/90 to-primary/80" />
+        </div>
+        <div className="max-w-content mx-auto px-6 lg:px-12 relative z-10">
+          <Breadcrumbs
+            items={[
+              { label: 'Home', path: '/' },
+              { label: 'Impact', path: '/impact' },
+              { label: 'Accountability & Reports' },
+            ]}
+          />
+          <div className="max-w-3xl mt-6">
+            <span className="inline-block py-1 px-3 rounded-full bg-white/10 text-emerald-300 text-xs font-semibold tracking-wider uppercase mb-3">
+              Governance &amp; Stewardship
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight">
+              Accountability &amp; Financial Reporting
+            </h1>
+            <p className="mt-4 text-base sm:text-lg text-slate-200 leading-relaxed">
+              Transparent stewardship is foundational to our mission. We believe that communities, supporters, and partners deserve complete clarity on how resources are stewarded.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 lg:px-8 py-20 space-y-12">
-        {/* Report Overview Box */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 shadow-level-2">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-8 border-b border-outline-variant/30">
-            <div>
-              <span className="px-3 py-1 rounded-full bg-secondary/15 text-secondary font-label-sm font-bold text-xs uppercase">
-                Official Publication
-              </span>
-              <h2 className="font-headline-lg text-2xl sm:text-3xl font-bold text-primary mt-2">
-                2023 Fiscal Year Comprehensive Report
-              </h2>
-              <p className="text-sm text-on-surface-variant mt-1">
-                Audited by Global Independent Assurance LLP • Published April 2024
+      <section className="max-w-4xl mx-auto px-6 lg:px-8 py-16 space-y-12">
+        {/* Core Principles */}
+        <div className="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm">
+          <h2 className="text-2xl font-bold font-serif text-slate-900 mb-4">
+            Our Stewardship Commitments
+          </h2>
+          <p className="text-slate-600 text-sm leading-relaxed mb-6">
+            RISE International operates under clear financial governance guidelines designed to maximize programme efficacy, protect donor intent, and prioritize community-led outcomes:
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-5 rounded-xl bg-slate-50 border border-slate-200/80">
+              <div className="flex items-center space-x-2 text-emerald-700 font-bold text-sm mb-2">
+                <span className="material-symbols-outlined text-lg">check_circle</span>
+                <span>Programme-First Allocation</span>
+              </div>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                The overwhelming majority of contributions are allocated directly to frontline programme initiatives—education, community infrastructure, and humanitarian relief.
               </p>
             </div>
-            <button
-              type="button"
-              onClick={() => alert('Downloading official RISE International 2023 Annual Report (PDF).')}
-              className="px-6 py-3.5 rounded-xl bg-secondary text-white font-label-md font-bold shadow-sm hover:bg-secondary/90 transition-all flex items-center gap-2 self-start sm:self-auto flex-shrink-0"
-            >
-              <span className="material-symbols-outlined text-[20px]">download</span>
-              <span>DOWNLOAD PDF (4.2 MB)</span>
-            </button>
-          </div>
 
-          {/* Fiscal Allocation Breakdown */}
-          <div className="mt-8">
-            <h3 className="font-headline-sm text-xl font-bold text-primary mb-6">
-              Where Your Dollar Goes (Fiscal Breakdown)
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <div className="flex justify-between text-sm font-bold text-primary mb-1">
-                  <span>Direct Field Programmes &amp; Community Infrastructure</span>
-                  <span className="text-secondary">88.2%</span>
-                </div>
-                <div className="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
-                  <div className="h-full bg-secondary rounded-full" style={{ width: '88.2%' }} />
-                </div>
+            <div className="p-5 rounded-xl bg-slate-50 border border-slate-200/80">
+              <div className="flex items-center space-x-2 text-emerald-700 font-bold text-sm mb-2">
+                <span className="material-symbols-outlined text-lg">fact_check</span>
+                <span>Independent Financial Oversight</span>
               </div>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Financial records and programme allocations undergo systematic review and audit in accordance with international accounting standards.
+              </p>
+            </div>
 
-              <div>
-                <div className="flex justify-between text-sm font-bold text-primary mb-1">
-                  <span>General Management, Quality Assurance &amp; Governance</span>
-                  <span>7.1%</span>
-                </div>
-                <div className="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
-                  <div className="h-full bg-primary rounded-full" style={{ width: '7.1%' }} />
-                </div>
+            <div className="p-5 rounded-xl bg-slate-50 border border-slate-200/80">
+              <div className="flex items-center space-x-2 text-emerald-700 font-bold text-sm mb-2">
+                <span className="material-symbols-outlined text-lg">public</span>
+                <span>Community Transparency</span>
               </div>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                Local project budgets and resource allocations are reviewed alongside local committees, ensuring community ownership and eliminating waste.
+              </p>
+            </div>
 
-              <div>
-                <div className="flex justify-between text-sm font-bold text-primary mb-1">
-                  <span>Fundraising Development &amp; Donor Relations</span>
-                  <span>4.7%</span>
-                </div>
-                <div className="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
-                  <div className="h-full bg-outline rounded-full" style={{ width: '4.7%' }} />
-                </div>
+            <div className="p-5 rounded-xl bg-slate-50 border border-slate-200/80">
+              <div className="flex items-center space-x-2 text-emerald-700 font-bold text-sm mb-2">
+                <span className="material-symbols-outlined text-lg">lock</span>
+                <span>Ethical Fundraising</span>
               </div>
+              <p className="text-slate-600 text-xs leading-relaxed">
+                We never sell, rent, or trade supporter data. All contributions are processed through verified, secure, PCI-compliant payment gateways.
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Audit Reaffirmation */}
-        <div className="p-8 rounded-3xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-4">
-          <div className="w-12 h-12 rounded-xl bg-secondary/15 text-secondary flex items-center justify-center flex-shrink-0">
-            <span className="material-symbols-outlined text-[28px]">verified</span>
-          </div>
-          <div>
-            <h4 className="font-headline-sm text-lg font-bold text-primary">Unqualified Clean Audit Opinion</h4>
-            <p className="font-body-md text-on-surface-variant text-sm mt-1 leading-relaxed">
-              Our independent external auditors issued an unqualified clean audit opinion for the fiscal year ended December 31, 2023, verifying that all financial statements present fairly, in all material respects, the financial position and programmatic expenditures of RISE International.
+        {/* Documentation Access */}
+        <div className="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="max-w-xl">
+            <h3 className="text-xl font-bold font-serif text-slate-900 mb-2">
+              Request Fiscal &amp; Audit Disclosures
+            </h3>
+            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+              Official annual disclosures, organizational filings, and detailed programme evaluation reports are available to partners and contributors upon formal request.
             </p>
+          </div>
+          <div className="flex-shrink-0">
+            <Link
+              to="/contact"
+              className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-lg transition-colors inline-flex items-center space-x-2"
+            >
+              <span className="material-symbols-outlined text-sm">mail</span>
+              <span>Contact Stewardship Office</span>
+            </Link>
           </div>
         </div>
       </section>

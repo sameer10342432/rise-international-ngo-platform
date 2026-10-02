@@ -7,6 +7,7 @@ export const PrivacyPage: React.FC = () => {
       <SEO
         title="Privacy Policy | RISE International"
         description="Official privacy policy governing data protection, donor confidentiality, and user rights at RISE International."
+        canonical="/privacy"
       />
 
       <section className="bg-primary-container text-white py-14 text-center">

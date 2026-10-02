@@ -14,11 +14,13 @@ import newsletterRoutes from './newsletterRoutes.js';
 import settingsRoutes from './settingsRoutes.js';
 import pageRoutes from './pageRoutes.js';
 import uploadRoutes from './uploadRoutes.js';
+import aiRoutes from './aiRoutes.js';
 
 const apiRouter = Router();
 
 apiRouter.use('/auth', authRoutes);
 apiRouter.use('/admin', adminRoutes);
+apiRouter.use('/admin/ai', aiRoutes);
 apiRouter.use('/programmes', programmeRoutes);
 apiRouter.use('/impact', impactRoutes);
 apiRouter.use('/stories', storyRoutes);

@@ -55,6 +55,17 @@ export const DonationCalculator: React.FC = () => {
 
   return (
     <section className="w-full bg-primary-container text-on-primary py-24 relative overflow-hidden" id="donate-calculator">
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/rise-home-donation-stewardship.webp"
+          alt="Mother and daughter smiling peacefully holding fresh vegetables harvested from a community garden supported by RISE"
+          className="w-full h-full object-cover opacity-20"
+          loading="lazy"
+          width={1344}
+          height={768}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-container/90 via-primary-container/80 to-primary-container/95" />
+      </div>
       <div className="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-12">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider font-bold">

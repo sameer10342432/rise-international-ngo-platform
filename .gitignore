@@ -19,6 +19,7 @@ server/node_modules
 server/dist
 server/uploads/*
 !server/uploads/.gitkeep
+AGENTS.md
 
 
 # Editor directories and files

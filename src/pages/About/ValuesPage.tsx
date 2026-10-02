@@ -58,7 +58,18 @@ export const ValuesPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="max-w-content mx-auto px-6 lg:px-12 py-20">
+      <section className="max-w-content mx-auto px-6 lg:px-12 py-16">
+        <div className="mb-14 rounded-3xl overflow-hidden shadow-level-2 border border-outline-variant/30">
+          <img
+            src="/images/rise-about-values-collaboration.webp"
+            alt="Hands of diverse volunteers and community members working together in unity around a clean water project"
+            className="w-full h-72 sm:h-96 object-cover"
+            loading="lazy"
+            width={1024}
+            height={768}
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {coreValues.map((val) => (
             <div

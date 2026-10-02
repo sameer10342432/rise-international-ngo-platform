@@ -5,8 +5,9 @@ export const TermsPage: React.FC = () => {
   return (
     <div className="w-full">
       <SEO
-        title="Terms &amp; Conditions | RISE International"
+        title="Terms & Conditions | RISE International"
         description="Terms and conditions governing the use of the RISE International nonprofit platform."
+        canonical="/terms"
       />
 
       <section className="bg-primary-container text-white py-14 text-center">

@@ -7,6 +7,7 @@ export const CookiesPage: React.FC = () => {
       <SEO
         title="Cookie Policy | RISE International"
         description="Learn about the essential and functional cookies utilized by the RISE International platform."
+        canonical="/cookies"
       />
 
       <section className="bg-primary-container text-white py-14 text-center">

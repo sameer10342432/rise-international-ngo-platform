@@ -19,4 +19,5 @@ export const ENV = {
   UPLOAD_DIR: process.env.UPLOAD_DIR || path.join(process.cwd(), 'uploads'),
   DONATION_PAYMENT_PROVIDER: process.env.DONATION_PAYMENT_PROVIDER || 'mock',
   DONATION_WEBHOOK_SECRET: process.env.DONATION_WEBHOOK_SECRET || 'whsec_test_secret',
+  GEMINI_API_KEY: process.env.GEMINI_API_KEY || '',
 };

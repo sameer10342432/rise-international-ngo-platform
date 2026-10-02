@@ -8,10 +8,12 @@ export const Hero: React.FC = () => {
       {/* Hero Background Layer */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/classroom-children-education.png"
-          alt="Children smiling in a vibrant classroom with a volunteer teacher"
+          src="/images/rise-home-hero-community.webp"
+          alt="Wide cinematic documentary photograph of diverse community members gathering with local NGO facilitators at sunset in an African village, planning clean water and schooling initiatives with hope and unity"
           className="w-full h-full object-cover object-center opacity-30 transform scale-105"
           loading="eager"
+          width={1344}
+          height={768}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/90 to-primary-container/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-transparent" />
@@ -25,7 +27,7 @@ export const Hero: React.FC = () => {
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-surface-container-lowest/10 backdrop-blur-md self-start text-secondary-fixed border border-secondary-fixed/20">
               <span className="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse" />
               <span className="font-label-sm text-label-sm uppercase tracking-wider font-bold">
-                RISE International • Global Humanitarian Initiative
+                RISE INTERNATIONAL
               </span>
             </div>
 
@@ -35,39 +37,33 @@ export const Hero: React.FC = () => {
             </h1>
 
             <p className="font-body-xl text-body-lg lg:text-body-xl text-surface-container-high/90 max-w-2xl leading-relaxed">
-              RISE International is a global nonprofit organisation working to uplift vulnerable communities through education, humanitarian aid, and sustainable development initiatives.
+              RISE International works to create opportunities, strengthen communities and support sustainable change through people-centred programmes and partnerships.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 to="/donate"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-label-lg text-label-lg shadow-lg hover:bg-secondary/90 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-secondary text-white font-label-lg text-label-lg shadow-lg hover:bg-secondary/90 transition-all hover:-translate-y-0.5 font-bold"
               >
                 <span className="material-symbols-outlined text-[20px]">favorite</span>
-                <span>DONATE NOW</span>
+                <span>Donate Now</span>
               </Link>
               <Link
                 to="/volunteer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-surface-container-lowest/10 backdrop-blur-md text-white font-label-lg text-label-lg hover:bg-surface-container-lowest/20 transition-all border border-white/10"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-surface-container-lowest/10 backdrop-blur-md text-white font-label-lg text-label-lg hover:bg-surface-container-lowest/20 transition-all border border-white/10 font-bold"
               >
                 <span className="material-symbols-outlined text-[20px]">group_add</span>
-                <span>BECOME A VOLUNTEER</span>
+                <span>Become a Volunteer</span>
               </Link>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-3 text-surface-container-high/85 font-body-sm text-body-sm">
-              <div className="flex text-secondary-fixed" aria-label="5 star institutional rating">
-                <span className="material-symbols-outlined text-[18px]">star</span>
-                <span className="material-symbols-outlined text-[18px]">star</span>
-                <span className="material-symbols-outlined text-[18px]">star</span>
-                <span className="material-symbols-outlined text-[18px]">star</span>
-                <span className="material-symbols-outlined text-[18px]">star</span>
-              </div>
-              <span>Trusted by 300+ international partners &amp; active in 25+ countries</span>
+              <span className="material-symbols-outlined text-secondary-fixed text-[20px]">verified</span>
+              <span>People-centred programmes, local community leadership, and transparent accountability.</span>
             </div>
           </div>
 
-          {/* Right Column: Interactive Quick Impact Deck */}
+          {/* Right Column: Interactive Quick Action Deck */}
           <div className="lg:col-span-5 flex flex-col justify-center">
             <FloatingImpactCard />
           </div>

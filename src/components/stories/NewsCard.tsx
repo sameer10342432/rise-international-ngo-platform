@@ -9,13 +9,27 @@ interface NewsCardProps {
 export const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
   return (
     <article className="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-level-1 hover:shadow-level-3 transition-all duration-300 flex flex-col justify-between border border-outline-variant/30">
+      <div className="h-48 sm:h-52 overflow-hidden relative bg-surface-container">
+        <img
+          src={article.image}
+          alt={article.altText}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+          width={1024}
+          height={768}
+        />
+        <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-primary font-label-sm text-label-sm font-bold shadow-sm">
+          {article.category}
+        </span>
+      </div>
+
       <div className="p-7 flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <span className="px-3 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm font-bold border border-secondary/20">
-            {article.category}
-          </span>
           <span className="font-body-sm text-body-sm text-on-surface-variant text-xs">
             {article.publishedAt}
+          </span>
+          <span className="text-xs text-on-surface-variant font-medium">
+            {article.readTime}
           </span>
         </div>
 
