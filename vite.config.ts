@@ -1,7 +1,9 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-const basePath = process.env.GITHUB_ACTIONS ? '/rise-international-ngo-platform/' : '/'
+const basePath =
+  process.env.BASE_PATH ||
+  (process.env.NODE_ENV === 'production' ? '/rise-international-ngo-platform/' : '/')
 
 // https://vite.dev/config/
 export default defineConfig({
