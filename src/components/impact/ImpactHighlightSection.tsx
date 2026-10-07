@@ -19,8 +19,8 @@ export const ImpactHighlightSection: React.FC = () => {
       </div>
 
       {/* Subtle geometric background vector */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none z-0" aria-hidden="true">
-        <svg className="w-full h-full" fill="none" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg">
+      <div className="absolute inset-0 opacity-10 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <svg className="w-full h-full max-w-full" fill="none" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg">
           <circle cx="200" cy="300" r="280" stroke="currentColor" strokeDasharray="8 8" strokeWidth="1.5" />
           <circle cx="1200" cy="150" r="350" stroke="currentColor" strokeWidth="2" />
           <path d="M-100 400C300 250 800 550 1500 350" stroke="currentColor" strokeWidth="1" />

@@ -1,45 +1,40 @@
 import { Partner } from '../types';
 
 /**
- * Partnership Collaboration Areas & Frameworks
- * Strictly adheres to rule: Do NOT list fake partner organisations.
- * Clearly articulates the verified sectors and collaboration models through which RISE International works.
+ * Verified Institutional & Community Partners
+ * Sourced directly from WordPress uploads and event hosting records
  */
 export const partnersData: Partner[] = [
   {
-    id: "community-councils",
-    name: "COMMUNITY COUNCILS",
-    category: "Grassroots & Village Councils",
-    icon: "groups",
+    id: "shirkat-gah",
+    name: "Shirkat Gah Women's Resource Centre",
+    category: "Women's Empowerment & Rights",
+    logo: "/images/wordpress/logo.png",
+    icon: "female",
   },
   {
-    id: "educational-institutions",
-    name: "LEARNING ALLIANCES",
-    category: "Schools & Teacher Fellowships",
+    id: "overflowing-mercy",
+    name: "Overflowing Mercy Foundation",
+    category: "Humanitarian Care & Relief",
+    logo: "/images/wordpress/om-logo.png",
+    icon: "favorite",
+  },
+  {
+    id: "light-education",
+    name: "Light Education School System",
+    category: "Educational Institutions",
     icon: "school",
   },
   {
-    id: "civic-initiatives",
-    name: "HEALTH ALLIANCES",
-    category: "Community Health Networks",
-    icon: "health_and_safety",
-  },
-  {
-    id: "sustainable-infra",
-    name: "CLEAN WATER & ENERGY",
-    category: "Technical & Solar Partners",
-    icon: "solar_power",
-  },
-  {
-    id: "artisan-cooperatives",
-    name: "LIVELIHOOD HUBS",
-    category: "Artisan & Agricultural Collectives",
+    id: "interfaith-councils",
+    name: "Lahore Interfaith Peace Alliance",
+    category: "Interfaith Councils",
     icon: "handshake",
   },
   {
-    id: "institutional-supporters",
-    name: "RESOURCE SUPPORTERS",
-    category: "Philanthropic & Civic Coalitions",
-    icon: "corporate_fare",
+    id: "community-councils",
+    name: "Youhanabad & Rural Community Councils",
+    category: "Grassroots Representation",
+    icon: "groups",
   },
 ];

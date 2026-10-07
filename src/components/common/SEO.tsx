@@ -128,13 +128,14 @@ export const SEO: React.FC<SEOProps> = ({
       {
         '@context': 'https://schema.org',
         '@type': 'NGO',
-        name: 'RISE International',
+        name: 'RISE International (Research Initiatives and Skill Enlightenment)',
+        alternateName: 'RISE INTL',
         url: 'https://riseintl.org',
-        logo: 'https://riseintl.org/images/rise-logo.svg',
-        slogan: 'Empowering Communities. Transforming Lives.',
+        logo: 'https://riseintl.org/images/logo/rise-logo.png',
+        slogan: 'Translating Thoughts Into Actions',
         description:
-          'RISE International works to create opportunities, strengthen communities and support sustainable change through people-centred programmes and partnerships.',
-        telephone: '+49 1520-6777889',
+          'Research Initiatives and Skill Enlightenment (RISE International) is committed to empowering communities through education, St. Louis IT Institute, vocational skills, interfaith harmony, and grassroots relief.',
+        telephone: '+92-302-4044714',
         email: 'info@riseintl.org',
       },
       {
@@ -193,7 +194,7 @@ export const SEO: React.FC<SEOProps> = ({
           name: 'RISE International',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://riseintl.org/images/rise-logo.svg',
+            url: 'https://riseintl.org/images/logo/rise-logo.png',
           },
         },
       });

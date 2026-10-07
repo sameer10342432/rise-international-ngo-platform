@@ -20,4 +20,6 @@ export const ENV = {
   DONATION_PAYMENT_PROVIDER: process.env.DONATION_PAYMENT_PROVIDER || 'mock',
   DONATION_WEBHOOK_SECRET: process.env.DONATION_WEBHOOK_SECRET || 'whsec_test_secret',
   GEMINI_API_KEY: process.env.GEMINI_API_KEY || '',
+  SUPER_ADMIN_EMAIL: process.env.SUPER_ADMIN_EMAIL || 'admin@riseintl.org',
+  SUPER_ADMIN_PASSWORD: process.env.SUPER_ADMIN_PASSWORD || 'Admin@Rise2026!',
 };

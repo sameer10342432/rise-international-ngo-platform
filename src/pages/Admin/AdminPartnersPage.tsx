@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AdminLayout } from '../../components/admin/AdminLayout';
 import { adminService } from '../../services/adminService';
+import { MediaPickerModal } from '../../components/admin/MediaPickerModal';
 
 export const AdminPartnersPage: React.FC = () => {
   const [partners, setPartners] = useState<any[]>([]);
@@ -8,12 +9,13 @@ export const AdminPartnersPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState<any | null>(null);
   const [saving, setSaving] = useState(false);
+  const [isMediaPickerOpen, setIsMediaPickerOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
     category: 'Institutional',
     website: '',
-    logo: '/images/rise-logo.svg',
+    logo: '/images/logo/rise-logo.png',
     description: '',
     sortOrder: 1,
     isVisible: true,
@@ -41,7 +43,7 @@ export const AdminPartnersPage: React.FC = () => {
       name: '',
       category: 'Institutional',
       website: '',
-      logo: '/images/rise-logo.svg',
+      logo: '/images/logo/rise-logo.png',
       description: '',
       sortOrder: partners.length + 1,
       isVisible: true,
@@ -55,7 +57,7 @@ export const AdminPartnersPage: React.FC = () => {
       name: item.name,
       category: item.category || 'Institutional',
       website: item.website || '',
-      logo: item.logo || '/images/rise-logo.svg',
+      logo: item.logo || '/images/logo/rise-logo.png',
       description: item.description || '',
       sortOrder: item.sortOrder || 1,
       isVisible: item.isVisible ?? true,
@@ -231,6 +233,26 @@ export const AdminPartnersPage: React.FC = () => {
                 </div>
 
                 <div>
+                  <label className="block font-semibold text-slate-700 mb-1">Partner Logo Asset</label>
+                  <div className="flex items-center space-x-2">
+                    <input
+                      type="text"
+                      value={formData.logo}
+                      onChange={(e) => setFormData({ ...formData, logo: e.target.value })}
+                      className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-slate-900 font-mono text-[11px]"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setIsMediaPickerOpen(true)}
+                      className="px-3 py-2 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-medium text-xs transition-colors flex items-center space-x-1 border border-emerald-200"
+                    >
+                      <span className="material-symbols-outlined text-base">photo_library</span>
+                      <span>Media Library</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div>
                   <label className="block font-semibold text-slate-700 mb-1">Partnership Scope / Description</label>
                   <textarea
                     rows={2}
@@ -260,6 +282,15 @@ export const AdminPartnersPage: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* Media Picker Modal */}
+        <MediaPickerModal
+          isOpen={isMediaPickerOpen}
+          onClose={() => setIsMediaPickerOpen(false)}
+          currentValue={formData.logo}
+          onSelect={(url) => setFormData((prev) => ({ ...prev, logo: url }))}
+          title="Select Partner Logo"
+        />
       </div>
     </AdminLayout>
   );

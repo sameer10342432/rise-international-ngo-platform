@@ -469,6 +469,65 @@ export const adminService = {
     return res.data;
   },
 
+  // Media Library Management APIs
+  async getMedia(params: { page?: number; limit?: number; search?: string; source?: string; type?: string } = {}): Promise<{
+    items: any[];
+    pagination: { page: number; limit: number; total: number; pages: number };
+  }> {
+    const searchParams = new URLSearchParams();
+    if (params.page) searchParams.set('page', params.page.toString());
+    if (params.limit) searchParams.set('limit', params.limit.toString());
+    if (params.search) searchParams.set('search', params.search);
+    if (params.source) searchParams.set('source', params.source);
+    if (params.type) searchParams.set('type', params.type);
+
+    const qs = searchParams.toString();
+    const res = await adminFetch<{ success: boolean; data: any }>(`/media${qs ? '?' + qs : ''}`);
+    return res.data;
+  },
+
+  async getMediaUsage(id: string): Promise<{ asset: any; usageCount: number; usages: any[] }> {
+    const res = await adminFetch<{ success: boolean; data: any }>(`/media/usage/${id}`);
+    return res.data;
+  },
+
+  async updateMedia(id: string, payload: { title?: string; altText?: string; caption?: string; category?: string }): Promise<any> {
+    const res = await adminFetch<{ success: boolean; data: any }>(`/media/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(payload),
+    });
+    return res.data;
+  },
+
+  async deleteMedia(id: string, force: boolean = false): Promise<any> {
+    const res = await adminFetch<{ success: boolean; data: any }>(`/media/${id}${force ? '?force=true' : ''}`, {
+      method: 'DELETE',
+    });
+    return res.data;
+  },
+
+  async syncWordPressManifest(): Promise<any> {
+    const res = await adminFetch<{ success: boolean; data: any }>('/media/sync-manifest', {
+      method: 'POST',
+    });
+    return res.data;
+  },
+
+  async uploadMediaAsset(file: File, meta: { title?: string; altText?: string; caption?: string; category?: string } = {}): Promise<any> {
+    const formData = new FormData();
+    formData.append('image', file);
+    if (meta.title) formData.append('title', meta.title);
+    if (meta.altText) formData.append('altText', meta.altText);
+    if (meta.caption) formData.append('caption', meta.caption);
+    if (meta.category) formData.append('category', meta.category);
+
+    const res = await adminFetch<{ success: boolean; data: any }>('/media/upload', {
+      method: 'POST',
+      body: formData,
+    });
+    return res.data;
+  },
+
   // AI Assistant APIs (Strictly Protected Admin-Only)
   async generateAiContent(payload: { pageType: string; pageTitle: string; context?: string; currentContent?: string }): Promise<any> {
     const res = await adminFetch<{ success: boolean; data: any }>('/admin/ai/content', {

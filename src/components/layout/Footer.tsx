@@ -11,14 +11,22 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-4 flex flex-col gap-4">
             <Link to="/" className="flex items-center gap-3 group" aria-label="RISE International">
               <img
-                src="/images/rise-logo.svg"
+                src="/images/logo/rise-logo-trimmed.png"
                 alt="RISE International Logo"
-                className="h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+                className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
               />
+              <div className="flex flex-col">
+                <span className="font-serif font-black text-lg tracking-tight text-primary leading-tight">
+                  RISE INTL
+                </span>
+                <span className="text-[10px] font-semibold text-neutral-600 tracking-wider uppercase font-sans">
+                  Translating Thoughts Into Actions
+                </span>
+              </div>
             </Link>
 
-            <p className="font-headline-sm text-base text-primary font-bold">
-              {organizationInfo.tagline}
+            <p className="font-headline-sm text-sm text-primary font-bold">
+              Research Initiatives and Skill Enlightenment
             </p>
 
             <p className="font-body-sm text-body-sm text-on-surface-variant max-w-sm leading-relaxed">
@@ -116,15 +124,29 @@ export const Footer: React.FC = () => {
               Contact &amp; Verification
             </span>
             <div className="flex flex-col gap-2 text-on-surface-variant font-body-sm text-body-sm">
-              <div className="flex items-center gap-2">
+              <div className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-[18px] text-secondary mt-0.5">location_on</span>
+                <div>
+                  <p className="font-semibold text-primary text-xs">Head Office (Pakistan):</p>
+                  <p className="text-xs text-on-surface-variant">{organizationInfo.headquarters}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="material-symbols-outlined text-[18px] text-secondary mt-0.5">public</span>
+                <div>
+                  <p className="font-semibold text-primary text-xs">Europe Office:</p>
+                  <p className="text-xs text-on-surface-variant">{organizationInfo.europeOffice}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 pt-1">
                 <span className="material-symbols-outlined text-[18px] text-secondary">call</span>
-                <a href={`tel:${organizationInfo.phone}`} className="hover:text-secondary transition-colors">
-                  {organizationInfo.phone}
+                <a href={`tel:${organizationInfo.phone}`} className="hover:text-secondary transition-colors text-xs">
+                  {organizationInfo.phone} / {organizationInfo.secondaryPhone}
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-[18px] text-secondary">mail</span>
-                <a href={`mailto:${organizationInfo.email}`} className="hover:text-secondary transition-colors">
+                <a href={`mailto:${organizationInfo.email}`} className="hover:text-secondary transition-colors text-xs">
                   {organizationInfo.email}
                 </a>
               </div>

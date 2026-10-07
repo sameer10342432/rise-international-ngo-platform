@@ -50,8 +50,49 @@ app.use(cookieParser());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Static uploads serving
+// Static uploads and public images serving
 app.use('/uploads', express.static(path.resolve(ENV.UPLOAD_DIR)));
+app.use('/images', express.static(path.resolve(process.cwd(), '../public/images')));
+
+// 301 Permanent Redirects for WordPress Legacy URLs (SEO & URL Preservation)
+const LEGACY_URL_REDIRECTS: Record<string, string> = {
+  '/index.php': '/',
+  '/home': '/',
+  '/about-us': '/about',
+  '/founderpresident-message': '/founder-message',
+  '/our-mission': '/about',
+  '/mission-vision': '/about',
+  '/our-story': '/story',
+  '/board-of-directors': '/team',
+  '/leadership': '/team',
+  '/our-team': '/team',
+  '/programs': '/programmes',
+  '/projects': '/programmes',
+  '/what-we-do': '/programmes',
+  '/our-impact': '/impact',
+  '/field-stories': '/stories',
+  '/articles': '/news',
+  '/blog': '/news',
+  '/what-does-god-say-about-supporting-each-other': '/news/what-does-god-say-about-supporting-each-other',
+  '/contact-us': '/contact',
+  '/support-us': '/donate',
+  '/get-involved': '/volunteer',
+  '/annual-reports': '/impact',
+  '/privacy-policy': '/privacy',
+  '/terms-and-conditions': '/terms',
+  '/wp-admin': '/admin',
+  '/wp-login.php': '/admin',
+};
+
+app.use((req, res, next) => {
+  // Strip trailing slash unless root
+  const cleanPath = req.path.length > 1 && req.path.endsWith('/') ? req.path.slice(0, -1) : req.path;
+  const target = LEGACY_URL_REDIRECTS[cleanPath.toLowerCase()];
+  if (target) {
+    return res.redirect(301, target);
+  }
+  next();
+});
 
 // Rate Limiter for API endpoints
 app.use('/api', generalLimiter);

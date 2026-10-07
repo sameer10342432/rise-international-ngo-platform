@@ -20,6 +20,7 @@ server/dist
 server/uploads/*
 !server/uploads/.gitkeep
 AGENTS.md
+public_html/
 
 
 # Editor directories and files

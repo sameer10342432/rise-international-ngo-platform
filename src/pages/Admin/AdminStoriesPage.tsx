@@ -3,6 +3,7 @@ import { AdminLayout } from '../../components/admin/AdminLayout';
 import { adminService } from '../../services/adminService';
 import { SeoEditorFields } from '../../components/admin/SeoEditorFields';
 import { AiAssistantModal } from '../../components/admin/AiAssistantModal';
+import { MediaPickerModal } from '../../components/admin/MediaPickerModal';
 
 export const AdminStoriesPage: React.FC = () => {
   const [stories, setStories] = useState<any[]>([]);
@@ -13,6 +14,7 @@ export const AdminStoriesPage: React.FC = () => {
   const [editingItem, setEditingItem] = useState<any | null>(null);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [isMediaPickerOpen, setIsMediaPickerOpen] = useState(false);
 
   const [formData, setFormData] = useState({
     title: '',
@@ -337,14 +339,23 @@ export const AdminStoriesPage: React.FC = () => {
 
                 <div>
                   <label className="block font-semibold text-slate-700 mb-1">Featured Image URL</label>
-                  <div className="flex space-x-2">
+                  <div className="flex items-center space-x-2">
                     <input
                       type="text"
                       value={formData.featuredImage}
                       onChange={(e) => setFormData({ ...formData, featuredImage: e.target.value })}
                       className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-slate-900 font-mono text-[11px]"
                     />
-                    <label className="cursor-pointer px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium">
+                    <button
+                      type="button"
+                      onClick={() => setIsMediaPickerOpen(true)}
+                      className="px-3 py-2 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-medium text-xs transition-colors flex items-center space-x-1 border border-emerald-200"
+                    >
+                      <span className="material-symbols-outlined text-base">photo_library</span>
+                      <span>Media Library</span>
+                    </button>
+                    <label className="cursor-pointer px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-xs flex items-center space-x-1">
+                      <span className="material-symbols-outlined text-base">upload_file</span>
                       <span>{uploading ? '...' : 'Upload'}</span>
                       <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
                     </label>
@@ -447,6 +458,15 @@ export const AdminStoriesPage: React.FC = () => {
             topic: formData.category || 'Community Resilience and Field Outcomes',
             currentContent: formData.content,
           }}
+        />
+
+        {/* Media Picker Modal */}
+        <MediaPickerModal
+          isOpen={isMediaPickerOpen}
+          onClose={() => setIsMediaPickerOpen(false)}
+          currentValue={formData.featuredImage}
+          onSelect={(url) => setFormData((prev) => ({ ...prev, featuredImage: url }))}
+          title="Select Story Featured Image"
         />
       </div>
     </AdminLayout>

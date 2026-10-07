@@ -15,6 +15,7 @@ import settingsRoutes from './settingsRoutes.js';
 import pageRoutes from './pageRoutes.js';
 import uploadRoutes from './uploadRoutes.js';
 import aiRoutes from './aiRoutes.js';
+import mediaRoutes from './mediaRoutes.js';
 
 const apiRouter = Router();
 
@@ -34,5 +35,7 @@ apiRouter.use('/newsletter', newsletterRoutes);
 apiRouter.use('/settings', settingsRoutes);
 apiRouter.use('/pages', pageRoutes);
 apiRouter.use('/admin/uploads', uploadRoutes);
+apiRouter.use('/media', mediaRoutes);
+apiRouter.use('/admin/media', mediaRoutes);
 
 export default apiRouter;

@@ -61,6 +61,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
     {
       group: 'Content Management',
       items: [
+        { label: 'Media Library', path: '/admin/media', icon: 'photo_library' },
         { label: 'Programmes', path: '/admin/programmes', icon: 'school' },
         { label: 'Field Stories', path: '/admin/stories', icon: 'auto_stories' },
         { label: 'News & Media', path: '/admin/news', icon: 'newspaper' },
@@ -108,8 +109,13 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
             >
               <span className="material-symbols-outlined">menu</span>
             </button>
-            <Link to="/admin" className="flex items-center space-x-2">
-              <span className="font-extrabold text-lg tracking-wider text-emerald-400 font-serif">RISE</span>
+            <Link to="/admin" className="flex items-center space-x-2.5">
+              <img
+                src="/images/logo/rise-logo-trimmed.png"
+                alt="RISE Logo"
+                className="h-8 w-auto object-contain bg-white rounded p-0.5"
+              />
+              <span className="font-extrabold text-base tracking-wider text-emerald-400 font-serif">RISE INTL</span>
               <span className="text-xs bg-emerald-950 text-emerald-300 font-semibold px-2 py-0.5 rounded border border-emerald-800 uppercase tracking-wider">
                 CMS Portal
               </span>

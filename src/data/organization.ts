@@ -1,11 +1,17 @@
 export const organizationInfo = {
-  name: "RISE International",
+  name: "RISE International (Research Initiatives and Skill Enlightenment)",
   shortName: "RISE INTL",
-  tagline: "Empowering Communities. Transforming Lives.",
-  phone: "+49 1520-6777889",
+  tagline: "Translating Thoughts Into Actions",
+  secondaryTagline: "Together, We Can Make A Difference",
+  phone: "+92-302-4044714",
+  secondaryPhone: "+49 1520-6777889",
+  italyPhone: "+39 327 6292920",
   email: "info@riseintl.org",
+  presidentEmail: "ishfaq.chaman@riseintl.org",
+  headquarters: "B-Block John Street Catholic Church RD Youhanabad, Lahore, Pakistan",
+  europeOffice: "Freiburg, Germany",
   supportingCopy:
-    "RISE International works to create opportunities, strengthen communities and support sustainable change through people-centred programmes and partnerships.",
+    "RISE International works to translate thoughts into actions through education, community resilience, vocational training, interfaith harmony, and sustainable grassroots development.",
   primaryCta: {
     label: "DONATE NOW",
     path: "/donate",
@@ -15,14 +21,14 @@ export const organizationInfo = {
     path: "/volunteer",
   },
   overview:
-    "RISE International is an international nonprofit organisation committed to supporting community resilience, educational access, emergency humanitarian relief, and long-term economic empowerment through locally led initiatives.",
+    "RISE International (Research Initiatives and Skill Enlightenment) is a dedicated nonprofit organization committed to empowering marginalized communities through sustainable education, vocational empowerment, interfaith harmony, environmental stewardship, and emergency relief.",
   financialEfficiency:
     "Dedicated to transparent stewardship, ethical governance, and accountable community partnerships.",
   socialLinks: [
-    { name: "LinkedIn", href: "https://linkedin.com", icon: "work" },
-    { name: "X / Twitter", href: "https://x.com", icon: "share" },
-    { name: "Facebook", href: "https://facebook.com", icon: "public" },
-    { name: "Instagram", href: "https://instagram.com", icon: "photo_camera" },
+    { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61567574883066", icon: "public" },
+    { name: "X / Twitter", href: "https://x.com/intlrise15460", icon: "share" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/rise-intl-284884334", icon: "work" },
+    { name: "Instagram", href: "https://www.instagram.com/riseintl/", icon: "photo_camera" },
   ],
   navLinks: [
     { label: "Home", path: "/" },
@@ -31,7 +37,7 @@ export const organizationInfo = {
       path: "/about",
       dropdown: [
         { label: "Overview", path: "/about" },
-        { label: "Our Story", path: "/about/our-story" },
+        { label: "Founder's Message", path: "/about/our-story" },
         { label: "Mission & Vision", path: "/about/mission-vision" },
         { label: "Our Values", path: "/about/values" },
         { label: "Our Team", path: "/about/team" },
@@ -42,10 +48,11 @@ export const organizationInfo = {
       path: "/our-work",
       dropdown: [
         { label: "All Programmes", path: "/our-work" },
-        { label: "Education", path: "/our-work/education" },
-        { label: "Community Development", path: "/our-work/community-development" },
-        { label: "Humanitarian Aid", path: "/our-work/humanitarian-aid" },
-        { label: "Economic Empowerment", path: "/our-work/economic-empowerment" },
+        { label: "St. Louis Institute", path: "/our-work/st-louis-institute" },
+        { label: "Women Vocational Training", path: "/our-work/women-vocational-training" },
+        { label: "Climate & Environment", path: "/our-work/climate-change-environmental-action" },
+        { label: "Christmas Care & Relief", path: "/our-work/annual-christmas-care-program" },
+        { label: "Interfaith Harmony", path: "/our-work/interfaith-harmony-peace" },
       ],
     },
     {
@@ -54,7 +61,7 @@ export const organizationInfo = {
       dropdown: [
         { label: "Impact Overview", path: "/impact" },
         { label: "Stories of Change", path: "/impact/stories" },
-        { label: "Impact Reporting", path: "/impact/report" },
+        { label: "Annual Reports", path: "/impact/report" },
       ],
     },
     {
@@ -65,10 +72,10 @@ export const organizationInfo = {
         { label: "Donate", path: "/donate" },
         { label: "Volunteer", path: "/volunteer" },
         { label: "Partner With Us", path: "/get-involved/partner" },
-        { label: "Sponsor a Child", path: "/get-involved/sponsor-a-child" },
+        { label: "Sponsor a Program", path: "/get-involved/sponsor-a-child" },
       ],
     },
-    { label: "News", path: "/news" },
+    { label: "News & Events", path: "/news" },
     { label: "Contact", path: "/contact" },
   ],
 };

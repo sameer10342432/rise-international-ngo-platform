@@ -126,6 +126,9 @@ const AdminSettingsPage = lazy(() =>
 const AdminUsersPage = lazy(() =>
   import('./pages/Admin/AdminUsersPage').then((m) => ({ default: m.AdminUsersPage }))
 );
+const AdminMediaPage = lazy(() =>
+  import('./pages/Admin/AdminMediaPage').then((m) => ({ default: m.AdminMediaPage }))
+);
 const AdminAuditPage = lazy(() =>
   import('./pages/Admin/AdminAuditPage').then((m) => ({ default: m.AdminAuditPage }))
 );
@@ -143,6 +146,7 @@ export const App: React.FC = () => {
         {/* Admin CMS Portal Routes */}
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route path="/admin" element={<AdminDashboardPage />} />
+        <Route path="/admin/media" element={<AdminMediaPage />} />
         <Route path="/admin/programmes" element={<AdminProgrammesPage />} />
         <Route path="/admin/impact" element={<AdminImpactPage />} />
         <Route path="/admin/stories" element={<AdminStoriesPage />} />
@@ -204,10 +208,34 @@ export const App: React.FC = () => {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/cookie-policy" element={<CookiesPage />} />
 
-          {/* Legacy / Aliases */}
+          {/* Legacy WordPress Aliases & Redirects (301 Preserved) */}
+          <Route path="/index.php" element={<Navigate to="/" replace />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/about-us" element={<Navigate to="/about" replace />} />
+          <Route path="/founderpresident-message" element={<Navigate to="/about" replace />} />
+          <Route path="/our-mission" element={<Navigate to="/about/mission-vision" replace />} />
+          <Route path="/our-story" element={<Navigate to="/about/our-story" replace />} />
+          <Route path="/board-of-directors" element={<Navigate to="/about/team" replace />} />
+          <Route path="/leadership" element={<Navigate to="/about/team" replace />} />
+          <Route path="/our-team" element={<Navigate to="/about/team" replace />} />
+          <Route path="/team" element={<Navigate to="/about/team" replace />} />
+          <Route path="/programs" element={<Navigate to="/our-work" replace />} />
+          <Route path="/programmes" element={<Navigate to="/our-work" replace />} />
+          <Route path="/projects" element={<Navigate to="/our-work" replace />} />
+          <Route path="/what-we-do" element={<Navigate to="/our-work" replace />} />
+          <Route path="/our-impact" element={<Navigate to="/impact" replace />} />
+          <Route path="/field-stories" element={<Navigate to="/impact/stories" replace />} />
+          <Route path="/stories" element={<Navigate to="/impact/stories" replace />} />
+          <Route path="/articles" element={<Navigate to="/news" replace />} />
+          <Route path="/blog" element={<Navigate to="/news" replace />} />
           <Route path="/news-and-stories" element={<Navigate to="/news" replace />} />
+          <Route path="/what-does-god-say-about-supporting-each-other" element={<Navigate to="/news/what-does-god-say-about-supporting-each-other" replace />} />
           <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
+          <Route path="/support-us" element={<Navigate to="/donate" replace />} />
+          <Route path="/annual-reports" element={<Navigate to="/impact/report" replace />} />
+          <Route path="/partners" element={<Navigate to="/get-involved/partner" replace />} />
+          <Route path="/wp-admin" element={<Navigate to="/admin" replace />} />
+          <Route path="/wp-login.php" element={<Navigate to="/admin" replace />} />
 
           {/* 404 Catch-All */}
           <Route path="*" element={<NotFoundPage />} />

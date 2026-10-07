@@ -1,68 +1,86 @@
 import { NewsArticle } from '../types';
 
 /**
- * Editorial Dispatches & News
- * Formatted according to Rule 18:
- * H1, Featured image, Category, Published date, Introduction, Main content, Related stories, CTA, SEO metadata.
- * Clearly marked as DRAFT / DEMO content to prevent fabrication of unverified historical events.
+ * Authentic RISE International News, Dispatches & Events
+ * Migrated directly from WordPress database and live publication records (riseintl.org / public_html)
  */
 export const newsArticlesData: NewsArticle[] = [
   {
-    id: "strengthening-community-learning-initiatives",
-    slug: "strengthening-community-learning-initiatives",
-    title: "[Draft Demo] Strengthening Community Learning Spaces Through Shared Partnerships",
-    excerpt: "Exploring collaborative approaches between local educators, community councils, and resource partners to support youth learning access.",
+    id: "what-does-god-say-about-supporting-each-other",
+    slug: "what-does-god-say-about-supporting-each-other",
+    title: "What does God say about supporting each other?",
+    excerpt: "Embracing the Spirit of Generosity and Biblical Wisdom on Giving. In a world when financial demands can distort judgment, generosity creates a circle of reciprocal blessings.",
     content: [
-      "Introduction: Access to reliable, supportive learning spaces is essential for youth development and community resilience. This draft dispatch outlines how RISE International collaborates with local school committees to address educational priorities.",
-      "Main Content: Quality education depends not only on physical classrooms, but on the ongoing support provided to local teachers and families. By listening to community priorities, initiatives are tailored to supply foundational materials, repair existing structures, and create welcoming learning environments.",
-      "Local Participation & Stewardship: Projects succeed best when community elders and parent committees take direct leadership. From maintaining solar classroom lighting to organizing study groups, community stewardship ensures long-term educational continuity.",
-      "Looking Ahead: Sustainable change is built step-by-step through consistent, dignified collaboration with frontline educators.",
-      "Notice: This article is demonstration draft content prepared for editorial review."
+      "In a world when financial demands and personal issues can distort our judgment, it is critical to recognize the significant influence that giving can have. The scriptures provide timeless advice on the issue of giving, reminding us that our approach to generosity may significantly enhance our lives and the lives of others.",
+      "Sowing Generously, A Harvest of Blessings — 2 Corinthians 9:6-7 states: 'Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows generously will also reap generously. Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver.'",
+      "This emphasizes the notion of reciprocity in offering. Just as a farmer who sows a big quantity of seed anticipates a huge harvest, individuals who give liberally will reap copious rewards—in spiritual progress, personal fulfillment, and community peace. Giving should be a celebration of generosity, not an onerous duty.",
+      "The Rewards of Generosity — Proverbs 11:25 provides another layer of insight: 'A generous person will prosper; whoever refreshes others will be refreshed.' By refreshing others, whether via financial assistance, acts of kindness, or encouragement, we bring a refreshing experience back into our own lives.",
+      "The Heart of Giving — Matthew 6:3-4 provides guidance on the nature of our giving: 'But when you give to the needy, do not let your left hand know what your right hand is doing, so that your giving may be in secret.' True generosity is not about gaining fame or accolades, but about making a constructive difference with a modest attitude.",
+      "Incorporating these truths into our daily lives entails cultivating purposeful generosity. Whether donating to support rural schooling or aiding a neighbor in need, we contribute joyfully and with humility."
     ],
-    category: "Education",
-    image: "/images/rise-news-learning-hub-launch.webp",
-    altText: "Community members gathering in computer room of newly opened educational learning centre",
-    publishedAt: "2026-10-02",
-    author: "Editorial Team",
-    readTime: "4 min read",
-    isDraftDemo: true,
+    category: "Faith & Community",
+    image: "/images/wordpress/bosa-charity-img1.jpg",
+    altText: "Community members in warm fellowship discussing giving and solidarity",
+    publishedAt: "2024-08-29",
+    author: "riseintl.org",
+    readTime: "5 min read",
+    isDraftDemo: false,
   },
   {
-    id: "sustainable-clean-water-approaches",
-    slug: "sustainable-clean-water-approaches",
-    title: "[Draft Demo] Sustainable Community Water Systems: Principles of Local Ownership",
-    excerpt: "Why participatory planning and community maintenance committees are central to enduring clean water infrastructure.",
+    id: "aids-and-health-awareness-by-professor-dr-gill",
+    slug: "aids-and-health-awareness-by-professor-dr-gill",
+    title: "AIDS and Health Awareness Seminar by Professor Dr. Gill",
+    excerpt: "Mr. Samuel Gill delivered an impactful seminar at Light Education School System on health awareness, preventive care, and community disease prevention.",
     content: [
-      "Introduction: Clean, dependable water access is a cornerstone of public health, education, and economic stability in rural communities.",
-      "Main Content: Traditional infrastructure projects often falter when maintenance knowledge is not embedded locally. RISE International's community development model emphasizes training local technicians and establishing accountable water committees prior to infrastructure completion.",
-      "Sustainable Technology: Integrating solar-powered pumping systems reduces operational overhead and provides reliable water points that communities can independently operate.",
-      "Notice: This article is demonstration draft content prepared for editorial review."
+      "RISE International hosted an enlightening health awareness seminar featuring respected advocate Professor Dr. Samuel Gill at Light Education School System.",
+      "The seminar provided crucial educational insights into community health protection, preventive measures, hygiene practices, and breaking social stigmas surrounding health conditions.",
+      "Key topics covered: understanding disease prevention and community impacts, latest public health protocols, and essential daily health tips for youth and parents.",
+      "RISE International continues to prioritize community wellness alongside formal classroom education, empowering local families with life-saving knowledge."
     ],
-    category: "Community Development",
-    image: "/images/rise-news-solar-water-expansion.webp",
-    altText: "Solar panel clean energy installation powering community water borehole station",
-    publishedAt: "2026-10-02",
-    author: "Infrastructure Team",
-    readTime: "3 min read",
-    isDraftDemo: true,
+    category: "Health & Awareness",
+    image: "/images/wordpress/bosa-charity-img11.jpg",
+    altText: "Professor Dr. Gill leading community health awareness session",
+    publishedAt: "2024-09-15",
+    author: "RISE Health Directorate",
+    readTime: "4 min read",
+    isDraftDemo: false,
   },
   {
-    id: "principles-of-dignified-humanitarian-response",
-    slug: "principles-of-dignified-humanitarian-response",
-    title: "[Draft Demo] Principles of Dignified Humanitarian Aid and Community Recovery",
-    excerpt: "How needs-based assistance and community coordination preserve dignity during acute hardship and disaster recovery.",
+    id: "climate-change-awareness-by-professor-saima",
+    slug: "climate-change-awareness-by-professor-saima",
+    title: "Climate Change Awareness Convention by Professor Saima",
+    excerpt: "Leading educator and environmental expert Professor Saima addressed students and teachers at Light Education School System on urgent ecological preservation.",
     content: [
-      "Introduction: Humanitarian response must preserve individual dignity and foster local agency at every stage of relief.",
-      "Main Content: In moments of acute emergency, rapid response must be closely coordinated with frontline local responders. Providing essential nutrition, clean water, and primary healthcare support with compassion ensures that vulnerable households receive timely assistance.",
-      "From Relief to Recovery: Emergency aid must always anticipate the recovery phase, supporting local markets and community structures so that recovery belongs to the community.",
-      "Notice: This article is demonstration draft content prepared for editorial review."
+      "RISE International organized a community environmental convention with Professor Saima focusing on local climate resilience and practical tree plantation strategies.",
+      "Attendees engaged in hands-on workshops covering environmental degradation, heat wave protection in Punjab, and water preservation techniques.",
+      "Following the seminar, participants pledged ongoing stewardship for the 500+ trees planted across local community sites and schools.",
+      "Empowering students to take direct ownership of their natural surroundings remains a pillar of RISE International's environmental agenda."
     ],
-    category: "Humanitarian Aid",
-    image: "/images/rise-news-annual-audit-transparency.webp",
-    altText: "Analytical stewardship charts and evaluation metrics displayed on tablet device",
-    publishedAt: "2026-10-02",
-    author: "Humanitarian Team",
+    category: "Environmental Action",
+    image: "/images/wordpress/WhatsApp-Image-2024-10-22-at-16.12.54_e3b77bd6.jpg",
+    altText: "Professor Saima and student volunteers planting trees during climate awareness initiative",
+    publishedAt: "2024-10-10",
+    author: "Environmental Stewardship Team",
     readTime: "4 min read",
-    isDraftDemo: true,
+    isDraftDemo: false,
   },
+  {
+    id: "interfaith-harmony-peace-2024",
+    slug: "interfaith-harmony-peace-2024",
+    title: "Tolerance Day Assembly: Interfaith Harmony & Peace at Qubra Masjid",
+    excerpt: "On 16 November (International Day for Tolerance), Muslim, Christian, and civil leaders gathered at Qubra Masjid in Samnabad, Lahore to champion mutual solidarity.",
+    content: [
+      "In commemoration of International Day for Tolerance on 16 November, RISE International brought together faith leaders, community elders, and youth at Qubra Masjid, Samnabad, Lahore.",
+      "Under the theme 'Interfaith Harmony & Peace', scholars prayed together, shared messages of unity, and planted an olive sapling as a living symbol of peace and mutual protection.",
+      "Community leaders commended RISE International's tireless dedication to building bridges across diverse religious traditions in Pakistan.",
+      "The assembly concluded with a joint declaration affirming that love, respect, and mutual brotherhood are the bedrock of a thriving, secure nation."
+    ],
+    category: "Interfaith Harmony",
+    image: "/images/wordpress/rise-team.jpg",
+    altText: "Muslim and Christian leaders united in solidarity at the Interfaith Harmony assembly in Lahore",
+    publishedAt: "2024-11-16",
+    author: "Ishfaq Chaman & Outreach Team",
+    readTime: "4 min read",
+    isDraftDemo: false,
+  }
 ];

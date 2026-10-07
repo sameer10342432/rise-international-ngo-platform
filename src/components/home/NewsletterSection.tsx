@@ -59,13 +59,13 @@ export const NewsletterSection: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <div className="flex flex-col sm:flex-row flex-wrap xl:flex-nowrap gap-3">
                     <input
                       type="text"
                       placeholder="First Name"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
-                      className="px-4 py-3.5 rounded-xl bg-surface-container-lowest/10 text-white placeholder-surface-container-high/60 focus:outline-none focus:bg-surface-container-lowest/20 focus:ring-2 focus:ring-secondary border border-white/10 flex-1 sm:max-w-[170px]"
+                      className="px-4 py-3.5 rounded-xl bg-surface-container-lowest/10 text-white placeholder-surface-container-high/60 focus:outline-none focus:bg-surface-container-lowest/20 focus:ring-2 focus:ring-secondary border border-white/10 flex-1 min-w-[120px]"
                     />
                     <input
                       type="email"
@@ -73,12 +73,12 @@ export const NewsletterSection: React.FC = () => {
                       placeholder="Email Address"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="px-4 py-3.5 rounded-xl bg-surface-container-lowest/10 text-white placeholder-surface-container-high/60 focus:outline-none focus:bg-surface-container-lowest/20 focus:ring-2 focus:ring-secondary border border-white/10 flex-1"
+                      className="px-4 py-3.5 rounded-xl bg-surface-container-lowest/10 text-white placeholder-surface-container-high/60 focus:outline-none focus:bg-surface-container-lowest/20 focus:ring-2 focus:ring-secondary border border-white/10 flex-1 min-w-[160px]"
                     />
                     <button
                       type="submit"
                       disabled={status === 'loading'}
-                      className="px-7 py-3.5 rounded-xl bg-secondary text-white font-label-lg text-label-lg hover:bg-secondary/90 transition-all flex-shrink-0 disabled:opacity-60 font-bold"
+                      className="px-6 py-3.5 rounded-xl bg-secondary text-white font-label-lg hover:bg-secondary/90 transition-all flex-shrink-0 disabled:opacity-60 font-bold whitespace-nowrap"
                     >
                       {status === 'loading' ? 'SUBSCRIBING...' : 'SUBSCRIBE'}
                     </button>

@@ -1,54 +1,53 @@
 import { ImpactStat } from '../types';
 
 /**
- * Verified Core Impact Dimensions
- * Adheres strictly to the rule: Do NOT fabricate factual beneficiary numbers or countries.
- * Focuses on verified qualitative pillars, measurable methodologies, and transparent stewardship.
+ * Authentic RISE International Impact Metrics
+ * Sourced directly from WordPress records and official annual reports (riseintl.org / public_html)
  */
 export const primaryImpactStats: ImpactStat[] = [
   {
-    id: "education",
-    value: "Education",
-    numericValue: 1,
-    suffix: "",
-    label: "Learning Access",
-    description: "Supporting community classrooms, learning materials, and teacher support.",
-    icon: "school",
+    id: "trees-planted",
+    value: "500+",
+    numericValue: 500,
+    suffix: "+",
+    label: "Trees Planted",
+    description: "Planted across school campuses and rural areas under the climate awareness initiative led by Prof. Saima.",
+    icon: "park",
   },
   {
-    id: "community",
-    value: "Resilience",
-    numericValue: 2,
-    suffix: "",
-    label: "Local Solutions",
-    description: "Participatory infrastructure designed and stewarded by community members.",
-    icon: "handshake",
+    id: "annual-relief",
+    value: "2,500+",
+    numericValue: 2500,
+    suffix: "+",
+    label: "Annual Relief Beneficiaries",
+    description: "Vulnerable individuals reached with winter rations, warm apparel, and care kits across Punjab.",
+    icon: "volunteer_activism",
   },
   {
-    id: "humanitarian",
-    value: "Relief",
-    numericValue: 3,
-    suffix: "",
-    label: "Dignified Care",
-    description: "Compassionate, prompt emergency assistance and community health support.",
-    icon: "health_and_safety",
+    id: "care-packages",
+    value: "500+",
+    numericValue: 500,
+    suffix: "+",
+    label: "Care Packages Delivered",
+    description: "Essential family food packages and relief supplies distributed during winter outreach programs.",
+    icon: "inventory_2",
   },
   {
-    id: "livelihood",
-    value: "Opportunity",
-    numericValue: 4,
+    id: "st-louis-launch",
+    value: "2026",
+    numericValue: 2026,
     suffix: "",
-    label: "Economic Dignity",
-    description: "Vocational skills, mentorship, and sustainable income pathways.",
-    icon: "monetization_on",
+    label: "St. Louis IT Hub Launch",
+    description: "Target opening date for the flagship rural Higher Information Technology Institute.",
+    icon: "computer",
   },
   {
     id: "accountability",
     value: "100%",
     numericValue: 100,
     suffix: "%",
-    label: "Accountability",
-    description: "Transparent governance, open stewardship, and community-led priorities.",
+    label: "Grassroots Accountability",
+    description: "Community-driven priority setting and transparent stewardship of all resources.",
     icon: "verified",
   },
 ];
@@ -56,22 +55,22 @@ export const primaryImpactStats: ImpactStat[] = [
 export const detailedImpactMetrics = [
   {
     metric: "Community-Led",
-    label: "Project Stewardship",
-    subtext: "Every initiative is initiated and maintained in direct partnership with local councils.",
+    label: "Grassroots Stewardship",
+    subtext: "Every project is identified and co-directed with local community members and elders.",
   },
   {
-    metric: "Needs-Based",
-    label: "Humanitarian Response",
-    subtext: "Targeted assistance prioritising the most vulnerable families without discrimination.",
+    metric: "Direct Relief",
+    label: "Needs-Based Support",
+    subtext: "Direct assistance to marginalized families, brick kiln workers, and vulnerable children.",
   },
   {
-    metric: "Long-Term",
-    label: "Sustainable Impact",
-    subtext: "Focusing on capacity building and skills that endure beyond initial project phases.",
+    metric: "Future-Ready",
+    label: "Technology & Skills",
+    subtext: "Equipping rural youth with computer science and vocational training through St. Louis Institute.",
   },
   {
-    metric: "Transparent",
-    label: "Financial Governance",
-    subtext: "Committed to clear reporting, accountable resource deployment, and donor trust.",
+    metric: "Interfaith",
+    label: "Social Solidarity",
+    subtext: "Uniting faith traditions for peace, tolerance, and mutual civic protection.",
   },
 ];

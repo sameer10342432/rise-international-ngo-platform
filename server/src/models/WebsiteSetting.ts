@@ -27,10 +27,10 @@ export interface IWebsiteSetting extends Document {
 
 const WebsiteSettingSchema = new Schema<IWebsiteSetting>(
   {
-    organisationName: { type: String, default: 'RISE International' },
-    tagline: { type: String, default: 'Empowering Communities. Transforming Lives.' },
+    organisationName: { type: String, default: 'RISE International (Research Initiatives and Skill Enlightenment)' },
+    tagline: { type: String, default: 'Translating Thoughts Into Actions' },
     email: { type: String, default: 'info@riseintl.org' },
-    phone: { type: String, default: '+49 1520-6777889' },
+    phone: { type: String, default: '+92-302-4044714' },
     socialLinks: [
       {
         name: { type: String },
@@ -38,18 +38,18 @@ const WebsiteSettingSchema = new Schema<IWebsiteSetting>(
         icon: { type: String },
       },
     ],
-    logo: { type: String, default: '/images/rise-logo.svg' },
-    favicon: { type: String, default: '/favicon.svg' },
+    logo: { type: String, default: '/images/logo/rise-logo.png' },
+    favicon: { type: String, default: '/favicon.png' },
     defaultSeoTitle: {
       type: String,
-      default: 'RISE International | Empowering Communities. Transforming Lives.',
+      default: 'RISE International | Translating Thoughts Into Actions',
     },
     defaultSeoDescription: {
       type: String,
       default:
-        'RISE International is a global nonprofit organisation working to uplift vulnerable communities through education, humanitarian aid, and sustainable development initiatives.',
+        'Research Initiatives and Skill Enlightenment (RISE International) — Empowering communities through education, St. Louis IT Institute, vocational skills, interfaith harmony, and sustainable grassroots development.',
     },
-    defaultOgImage: { type: String, default: '/images/classroom-children-education.png' },
+    defaultOgImage: { type: String, default: '/images/logo/rise-logo.png' },
     homepageConfig: {
       heroTitle: { type: String, default: 'Empowering Communities.' },
       heroSubtitle: { type: String, default: 'Transforming Lives.' },

@@ -57,9 +57,24 @@ export const pageController = {
 
   // Admin: Create page
   async createPage(req: AuthenticatedRequest, res: Response) {
-    const { title, content, featuredImage, status, seoTitle, seoDescription } = req.body;
+    const {
+      title,
+      content,
+      featuredImage,
+      status,
+      sections,
+      seoTitle,
+      seoDescription,
+      canonicalUrl,
+      ogTitle,
+      ogDescription,
+      ogImage,
+      noindex,
+      menuVisibility,
+      sortOrder,
+    } = req.body;
 
-    let slug = generateSlug(title);
+    let slug = req.body.slug ? generateSlug(req.body.slug) : generateSlug(title);
     let count = 1;
     while (await Page.findOne({ slug })) {
       slug = `${generateSlug(title)}-${count++}`;
@@ -68,11 +83,19 @@ export const pageController = {
     const newPage = await Page.create({
       title,
       slug,
-      content,
+      content: content || '',
       featuredImage,
       status: status || 'published',
+      sections: sections || [],
       seoTitle,
       seoDescription,
+      canonicalUrl,
+      ogTitle,
+      ogDescription,
+      ogImage,
+      noindex: !!noindex,
+      menuVisibility: menuVisibility !== false,
+      sortOrder: sortOrder || 0,
       publishedAt: status === 'published' ? new Date() : undefined,
     });
 
@@ -91,7 +114,23 @@ export const pageController = {
       return sendError(res, 'Page not found.', [], 404);
     }
 
-    const { title, content, featuredImage, status, seoTitle, seoDescription, slug } = req.body;
+    const {
+      title,
+      content,
+      featuredImage,
+      status,
+      sections,
+      seoTitle,
+      seoDescription,
+      canonicalUrl,
+      ogTitle,
+      ogDescription,
+      ogImage,
+      noindex,
+      menuVisibility,
+      sortOrder,
+      slug,
+    } = req.body;
 
     if (title && title !== targetPage.title && !slug) {
       let newSlug = generateSlug(title);
@@ -108,6 +147,7 @@ export const pageController = {
     if (slug) targetPage.slug = slug.toLowerCase();
     if (content !== undefined) targetPage.content = content;
     if (featuredImage !== undefined) targetPage.featuredImage = featuredImage;
+    if (sections !== undefined) targetPage.sections = sections;
     if (status !== undefined) {
       targetPage.status = status;
       if (status === 'published' && !targetPage.publishedAt) {
@@ -116,6 +156,13 @@ export const pageController = {
     }
     if (seoTitle !== undefined) targetPage.seoTitle = seoTitle;
     if (seoDescription !== undefined) targetPage.seoDescription = seoDescription;
+    if (canonicalUrl !== undefined) targetPage.canonicalUrl = canonicalUrl;
+    if (ogTitle !== undefined) targetPage.ogTitle = ogTitle;
+    if (ogDescription !== undefined) targetPage.ogDescription = ogDescription;
+    if (ogImage !== undefined) targetPage.ogImage = ogImage;
+    if (noindex !== undefined) targetPage.noindex = noindex;
+    if (menuVisibility !== undefined) targetPage.menuVisibility = menuVisibility;
+    if (sortOrder !== undefined) targetPage.sortOrder = sortOrder;
 
     await targetPage.save();
 

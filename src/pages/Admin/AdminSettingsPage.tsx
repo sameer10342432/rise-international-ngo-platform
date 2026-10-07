@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { AdminLayout } from '../../components/admin/AdminLayout';
 import { adminService } from '../../services/adminService';
+import { MediaPickerModal } from '../../components/admin/MediaPickerModal';
 
 export const AdminSettingsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [isMediaPickerOpen, setIsMediaPickerOpen] = useState(false);
+  const [mediaPickerField, setMediaPickerField] = useState<'logo' | 'favicon'>('logo');
 
   const [formData, setFormData] = useState({
     organisationName: 'RISE International',
-    tagline: 'Empowering Communities. Transforming Lives.',
+    tagline: 'Translating Thoughts Into Actions',
     email: 'info@riseintl.org',
-    phone: '+49 1520-6777889',
-    defaultSeoTitle: 'RISE International | Empowering Communities. Transforming Lives.',
+    phone: '+92-302-4044714',
+    logo: '/images/logo/rise-logo.png',
+    favicon: '/favicon.png',
+    defaultSeoTitle: 'RISE International | Translating Thoughts Into Actions',
     defaultSeoDescription:
-      'RISE International is a global nonprofit organisation working to uplift vulnerable communities through education, humanitarian aid, and sustainable development initiatives.',
+      'Research Initiatives and Skill Enlightenment (RISE International) is dedicated to empowering vulnerable communities through higher IT education, vocational skill centers, climate action, and dignified relief.',
     homepageConfig: {
-      heroTitle: 'Empowering Communities.',
-      heroSubtitle: 'Transforming Lives.',
+      heroTitle: 'Translating Thoughts Into Actions',
+      heroSubtitle: 'Together, We Can Make A Difference',
       heroDescription:
-        'RISE International is a global nonprofit organisation working to uplift vulnerable communities through education, humanitarian aid, and sustainable development initiatives.',
+        'RISE International is a dedicated organisation committed to empowering communities through sustainable education, vocational centers, and life-changing humanitarian programs.',
       heroCtaPrimary: 'DONATE NOW',
       heroCtaSecondary: 'BECOME A VOLUNTEER',
       showDonationCalculator: true,
@@ -146,6 +151,52 @@ export const AdminSettingsPage: React.FC = () => {
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg text-slate-900"
                 />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">Authentic Brand Logo URL</label>
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="text"
+                    value={formData.logo}
+                    onChange={(e) => setFormData({ ...formData, logo: e.target.value })}
+                    className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-slate-900 font-mono text-[11px]"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMediaPickerField('logo');
+                      setIsMediaPickerOpen(true);
+                    }}
+                    className="px-3 py-2 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-medium text-xs transition-colors flex items-center space-x-1 border border-emerald-200"
+                  >
+                    <span className="material-symbols-outlined text-base">photo_library</span>
+                    <span>Media Library</span>
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">Favicon / Site Icon URL</label>
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="text"
+                    value={formData.favicon}
+                    onChange={(e) => setFormData({ ...formData, favicon: e.target.value })}
+                    className="flex-1 px-3 py-2 border border-slate-300 rounded-lg text-slate-900 font-mono text-[11px]"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMediaPickerField('favicon');
+                      setIsMediaPickerOpen(true);
+                    }}
+                    className="px-3 py-2 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-medium text-xs transition-colors flex items-center space-x-1 border border-emerald-200"
+                  >
+                    <span className="material-symbols-outlined text-base">photo_library</span>
+                    <span>Media Library</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -280,6 +331,14 @@ export const AdminSettingsPage: React.FC = () => {
         )}
       </div>
 
+      {/* Media Picker Modal */}
+      <MediaPickerModal
+        isOpen={isMediaPickerOpen}
+        onClose={() => setIsMediaPickerOpen(false)}
+        currentValue={mediaPickerField === 'logo' ? formData.logo : formData.favicon}
+        onSelect={(url) => setFormData((prev) => ({ ...prev, [mediaPickerField]: url }))}
+        title={mediaPickerField === 'logo' ? 'Select Brand Logo' : 'Select Favicon / Site Icon'}
+      />
     </AdminLayout>
   );
 };

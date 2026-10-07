@@ -79,6 +79,9 @@ export interface Partner {
   name: string;
   category: string;
   icon: string;
+  logo?: string;
+  website?: string;
+  description?: string;
 }
 
 export type DonationFrequency = 'once' | 'monthly';

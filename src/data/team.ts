@@ -1,57 +1,56 @@
 import { TeamMember } from '../types';
 
 /**
- * Functional Stewardship Roles
- * Note: Individual team appointments and biographies are managed via the CMS.
- * No unverified personal identities or fabricated accreditations are asserted.
+ * Authentic RISE International Leadership Team
+ * Sourced directly from WordPress records (riseintl.org / public_html)
  */
 export const teamData: TeamMember[] = [
   {
-    id: "executive-leadership",
-    name: "Executive Leadership",
-    role: "Organisation Direction & Strategy",
-    department: "Executive Stewardship",
-    bio: "Guiding RISE International's strategic vision, upholding humanitarian integrity, and fostering meaningful global partnerships.",
-    image: "/images/rise-team-exec-leadership.webp",
+    id: "ishfaq-chaman",
+    name: "Ishfaq Chaman",
+    role: "Founder, President & Visionary",
+    department: "Executive Directorate",
+    bio: "Extensive background in international humanitarian service including Italian Red Cross (Croce Rossa Italiana) collaboration. Founded RISE International to address pressing societal challenges and expand human potential through education, technology, and collective community action.",
+    image: "/images/wordpress/Untitled-design-28.png",
   },
   {
-    id: "field-programmes",
-    name: "Programme Operations",
-    role: "Community Initiatives & Field Coordination",
-    department: "Programme Management",
-    bio: "Working directly with community coordinators to ensure projects are locally driven, ethically implemented, and sustainable.",
-    image: "/images/rise-team-programmes-director.webp",
+    id: "saima-samuel",
+    name: "Saima Samuel",
+    role: "Executive Director",
+    department: "Executive Directorate & Education",
+    bio: "Dedicated educator, trainer, and motivational community leader. Leads frontline educational curriculum, women empowerment initiatives, and youth development across Punjab.",
+    image: "/images/wordpress/Saima-profile.jpeg",
   },
   {
-    id: "education-initiatives",
-    name: "Education & Skills",
-    role: "Learning Initiatives Lead",
-    department: "Education & Youth Opportunities",
-    bio: "Focusing on inclusive primary education access, teacher training support, and foundational literacy opportunities.",
-    image: "/images/rise-team-education-lead.webp",
+    id: "noel-patras",
+    name: "Noel Patras",
+    role: "Chief Advancement & Technology Officer",
+    department: "Strategic Technology & Systems",
+    bio: "Driving digital modernization, strategic institutional partnerships, and technological architecture to create lasting, scalable social impact.",
+    image: "/images/wordpress/Noel-patras.jpg",
   },
   {
-    id: "humanitarian-operations",
-    name: "Humanitarian Response",
-    role: "Emergency Assistance Coordination",
-    department: "Humanitarian Aid & Health",
-    bio: "Coordinating rapid, dignified relief supplies, water access, and community healthcare support during acute hardship.",
-    image: "/images/rise-team-humanitarian-lead.webp",
+    id: "akhiz-mehmood",
+    name: "Akhiz Mehmood",
+    role: "Community Leadership Specialist",
+    department: "Field Operations & Mobilization",
+    bio: "Coordinating grassroots community mobilization, field outreach, and stakeholder engagement in rural and urban communities.",
+    image: "/images/wordpress/Akhiz-mehmood.jpg",
   },
   {
-    id: "livelihoods-development",
-    name: "Economic Empowerment",
-    role: "Livelihood & Skills Development",
-    department: "Community Enterprise",
-    bio: "Supporting vocational training, women's artisan collectives, and smallholder community enterprise initiatives.",
-    image: "/images/rise-team-economic-specialist.webp",
+    id: "shahbaz-munawer",
+    name: "Shahbaz Munawer",
+    role: "Community Outreach Director",
+    department: "Community Engagement & Interfaith Affairs",
+    bio: "Specializing in community peace assemblies, interfaith dialogue, and local relationship management across diverse neighborhoods.",
+    image: "/images/wordpress/Shahbaz-Munawer.jpg",
   },
   {
-    id: "governance-transparency",
-    name: "Governance & Accountability",
-    role: "Financial Stewardship & Compliance",
-    department: "Audit & Governance",
-    bio: "Ensuring transparent resource allocation, rigorous compliance with humanitarian standards, and regular public reporting.",
-    image: "/images/rise-team-accountability-lead.webp",
+    id: "junaid-gabriel",
+    name: "Junaid Gabriel",
+    role: "VP and Secretary Finance",
+    department: "Financial Governance & Compliance",
+    bio: "Ensuring transparent fiscal management, institutional audit compliance, and accountable stewardship of donor funds.",
+    image: "/images/wordpress/team-riseintl.jpg",
   }
 ];
