@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build && node --input-type=module -e \"import fs from 'fs'; fs.copyFileSync('dist/index.html','dist/404.html'); fs.writeFileSync('dist/.nojekyll','');\"",
+    "deploy": "gh-pages -d dist --dotfiles --nojekyll"
   },
   "dependencies": {
     "framer-motion": "^13.5.0",
@@ -21,6 +23,7 @@
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
     "autoprefixer": "^10.6.1",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.28",
     "tailwindcss": "^3.4.19",
     "typescript": "~6.0.2",
